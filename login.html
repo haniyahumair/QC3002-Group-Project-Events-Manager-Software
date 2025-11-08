@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up page </title>
+    <title>Login page </title>
 </head>
 <body>
-    <!--Sign Up Nav Section-->
+    <!--Login Nav Section-->
 
     <section class="nav">
         <div class="name">
@@ -19,33 +19,36 @@
         </div>
     </section>
 
-    <!--Sign Up Body-->
+    <!--Login Body-->
     <main>
-        <div class="sign-up-container">
-            <div class=" sign-up-content">
+        <div class="login-container">
+            <div class="login-content">
                 <div class="text">
-                    <h2 class="message">Get Started</h2>
-                    <p class="login-message">Already have an account? <a href="login.html" class="login-link-btn">Login</a></p>
+                    <h2 class="-welcome-message">Welcome Back</h2>
+                    <p class="sub-message"><i>Jump back in and start planning your next campus meetup!</i></p>
                 </div>
             </div>
             
             <!--Sign Up Form-->
-            <div class="sign-up-form">
-                <form action="#" method="POST" class="register-form" id="register-form">
-                    <div class="form-group">
-                        <input type="text" name="name" id="name" placeholder="Full Name" required/>
+            <div class="login-form">
+                <form action="#" method="POST" class="login-form" id="login-form">
+                    <div class="login-form-group">
                         <input type="email" name="email-address" id="email" placeholder="Email Address" required/>
                         <input type="password" name="password" id="password" placeholder="Password" required maxlength="8"/>
                     </div>
 
                     <div class="submit-btn">
-                        <input type="submit" value="Sign Up" class="sign-up-btn"/>
+                        <input type="submit" value="Login" class="login-btn"/>
                     </div>
-                </form>    
+                </form>  
+                
+                <div class="sign-up-link">
+                    <p class="signup-message">Not a member? <a href="signup.html" class="signup-link-btn">Register Now</a></p>
+                </div>
             </div>
         </div>
 
-    <!--Sign Up Image-->
+    <!--Login Page Image-->
     <div class="signup-img">
         <img src="/Images/website graphics.png" alt="Sign Up Image">
     </div>
