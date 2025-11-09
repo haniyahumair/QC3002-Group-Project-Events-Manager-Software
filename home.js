@@ -10,4 +10,10 @@ const heroBrowse = document.querySelector('#heroBrowse');
 // main function for loading page
 if (auth.isAuthenticated) {
   btnLogin.textContent = 'Logout';
+  btnLogin.onclick = () => {
+    clearAuth();
+    location.reload();
+  };
+} else {
+  btn
   
