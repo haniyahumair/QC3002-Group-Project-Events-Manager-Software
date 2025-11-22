@@ -1,7 +1,7 @@
 // login.js
 import { setAuth } from './auth.js';
 
-// Select form and inputs based on your HTML
+// basic form and inputs (email + password)
 const form = document.querySelector('#login-form');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
