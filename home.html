@@ -4,167 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusConnect</title>
-
-    <!--
-      Loading Bootstrap CSS
-      Assumes you have a folder named 'css' with bootstrap.min.css inside.
-    -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Optional: Add custom styles here if needed to override Bootstrap -->
-    <style>
-        body {
-            background: #f2f2f2;
-        }
-
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .nav-link.active {
-            font-weight: bold;
-        }
-
-        .feature-box {
-            background: #e9e9e9;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .event-card img {
-            border-radius: 12px 12px 0 0;
-        }
-
-        .event-card {
-            border-radius: 12px;
-            overflow: hidden;
-            background: #fff;
-        }
-    </style>
-
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/global.css">
 </head>
 <body>
-
-    <!--
-      START: Bootstrap Header
-      - 'navbar-expand-lg': The menu will collapse on screens smaller than 'large' (tablets/phones).
-      - 'navbar-light' & 'bg-light': A standard light-colored theme. You can change 'bg-light' to 'bg-dark' and 'navbar-light' to 'navbar-dark' for a dark theme.
-    -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-            <div class="container-fluid">
-
-                <!-- Site Name (Brand) -->
-                <div class="brand-name">
-                    <img src="/Images/Logo.svg" alt="CampusConnect Logo" class="logo">
-                    <h3 class="CampusConnect">CampusConnect</h3>
-                </div>
-
-                <!-- Mobile Toggler Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Collapsible Menu -->
-                <div class="collapse navbar-collapse" id="main-nav">
-
-                    <!--
-                      Left-side Nav Links
-                      - 'mx-auto' centers the nav.
-                      - 'nav-pills' styles the links as pills.
-                    -->
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-pills">
-                        <li class="nav-item mx-1">
-                            <a class="nav-link active rounded-pill border border-dark" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item mx-1">
-                            <a class="nav-link rounded-pill border border-dark" href="#">Events</a>
-                        </li>
-                        <li class="nav-item mx-1">
-                            <a class="nav-link rounded-pill border border-dark" href="#">Create Event</a>
-                        </li>
-                    </ul>
-
-                    <!--
-                      Right-side Login Button
-                      'ms-auto' (margin-start: auto) pushes this to the right.
-                    -->
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <!--
-                              Styled as a button, but you can also just use 'nav-link'
-                              if you prefer a plain text link.
-                            -->
-                            <a class="btn btn-primary" href="login.html">Login</a>
-                        </li>
-                    </ul>
-
-                </div> <!-- / .collapse -->
-            </div> <!-- / .container-fluid -->
+        <nav class="navbar">
+            <!-- Brand -->
+            <div class="brand-name">
+                <img src="assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
+                <p class="CampusConnect">Campus<b>Connect</b></p>
+            </div>
+    
+            <!-- Nav Links -->
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="create.html">Create Event</a>
+                </li>
+            </ul>
+    
+            <!-- Login Button -->
+            <a class="btn-primary" href="login.html">Login</a>
         </nav>
     </header>
 
     <section class="hero container">
-        <h6 class="text-muted">Qatar’s #1 Student Event Platform</h6>
+        <p class="text-muted">Qatar’s #1 Student Event Platform</p>
         <h1 class="fw-bold display-4">Discover. Attend.<br/>Create.</h1>
-        <p class="mt-3">Bring your campus to life! Explore events, meet new people, and make every day at uni
-            unforgettable.</p>
+        <p class="mt-3">Bring your campus to life! Explore events, meet new people, and make every day at uni unforgettable.</p>
         <div class="mt-4">
-            <a class="btn btn-dark btn-lg me-2" href="#">Browse Events</a>
-            <a class="btn btn-secondary btn-lg" href="#">Create Event</a>
+            <a class="btn browse-events" href="events.html">Browse Events</a>
+            <a class="btn create-events" href="signup.html">Create Event</a>
         </div>
 
-        <div class="d-flex justify-content-center mt-4 gap-4">
-            <div class="text-center"><strong>120+</strong><br/>Events Created</div>
-            <div class="text-center"><strong>1K</strong><br/>Active Users</div>
-            <div class="text-center"><strong>7+</strong><br/>Partner Universities</div>
+        <div class="stats">
+            <div id="text-center" class="event-created"><span class="numbers"><strong>120+</strong></span><br/>Events Created</div>
+            <div id="text-center" class="active-users"><span class="numbers"><strong>1K</strong></span><br/>Active Users</div>
+            <div id="text-center" class="partner-uni"> <span class="numbers"><strong>7+</strong></span><br/>Partner Universities</div>
         </div>
     </section>
 
-    <section class="container text-center my-5">
+    <section class="info-container">
         <h2 class="fw-bold">Everything you need, all in one place</h2>
         <p class="text-muted">Built by students, for students. Simple to use.</p>
 
-        <div class="row mt-4 g-4">
-            <div class="col-md-4">
-                <div class="feature-box">
-                    <img src="/Images/Shape.svg" alt="Cylinder Shape">
-                    <h5 class="fw-bold">Browse Events</h5>
-                    <p>Discover amazing experiences happening on your campus—from sports, workshops, fests & more!</p>
-                </div>
+        <div class="cards-container">
+            <div class="info-card">
+                <img src="assets/Icons/Shape.svg" alt="Cylinder Shape">
+                <h3>Browse Events</h3>
+                <p>Discover amazing experiences happening on your campus—from sports, workshops, fests & more!</p>
             </div>
-            <div class="col-md-4">
-                <div class="feature-box">
-                    <img src="Images/Semi Circle.svg" alt="Semi Circle Shape">
-                    <h5 class="fw-bold">Attend Events</h5>
-                    <p>Register for free or paid events. Our platform makes sign‑ups easy and efficient.</p>
-                </div>
+            
+            <div class="info-card">
+                <img src="assets/Icons/Semi Circle.svg" alt="Semi Circle Shape">
+                <h3>Attend Events</h3>
+                <p>Register for free or paid events. Our platform makes sign-ups easy and efficient.</p>
             </div>
-            <div class="col-md-4">
-                <div class="feature-box">
-                    <img src="Images/Flower.svg" alt="Flower Shape">
-                    <h5 class="fw-bold">Create Events</h5>
-                    <p>Host your own events with our simple creation tools. Share info, manage entries, and more.</p>
-                </div>
+            
+            <div class="info-card">
+                <img src="assets/Icons/Flower.svg" alt="Flower Shape">
+                <h3>Create Events</h3>
+                <p>Host your own events with our simple creation tools. Share info, manage entries, and more.</p>
             </div>
         </div>
     </section>
 
-    <section class="container my-5">
+    <section class="upcoming-events-container container">
         <h2 class="fw-bold">Upcoming Events</h2>
         <p class="text-muted">Don't miss out on these amazing experiences!</p>
 
-        <div class="row g-4 mt-3">
+        <div class="event-cards-container">
             <!-- Event 1 -->
             <div class="col-md-4">
                 <div class="event-card shadow">
-                    <img src="Images/IMG_6404.jpg" class="img-fluid"/>
+                    <div class="event-price">
+                        <img src="assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
+                        <p class="price">Free</p>
+                    </div>
+                    <img src="assets/Images/IMG_6404.jpg" class="img-fluid"/>
                     <div class="p-3">
-                        <h5 class="fw-bold">AI in Action: Transforming Theory into Practice</h5>
-                        <p class="text-muted">Session by Abdulrahman Hassan on practical AI applications.</p>
-                        <button class="btn btn-dark w-100">View Details</button>
+                        <h5 class="event-title">AI in Action: Transforming Theory into Practice</h5>
+                        <p class="event-description">This session will be delivered by Abdulrahman Hassan, and Information Security Expert, and is designed for those keen to explore practical applications of AI and bridge the gape between theory and real world impact.</p>
+                        <div class="date-time">
+                            <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
+                            <p class="date">November 14 2025</p>
+                            <p class="time">04:00 - 06:00 PM</p>
+                        </div>
+                        <div class="location-of-event">
+                            <img src="assets/Icons/Pin.svg" alt="Location-Icon">
+                            <p class="location"> BLDG 2, AFG College with the University of Aberdeen</p>
+                        </div>
+                        <div class="type-of-event">
+                            <button class="event-type">
+                                <img src="assets/Icons/Star 1.svg" alt="Star-Icon">
+                                Workshop
+                            </button>
+                        </div>
+                        <a href="login.html" class="btn btn-dark w-100">View Details</a>
                     </div>
                 </div>
             </div>
@@ -172,11 +114,30 @@
             <!-- Event 2 -->
             <div class="col-md-4">
                 <div class="event-card shadow">
-                    <img src="Images/football.jpg" class="img-fluid"/>
+                    <div class="event-price">
+                        <img src="assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
+                        <p class="price">Free</p>
+                    </div>
+                    <img src="assets/Images/football.jpg" class="img-fluid"/>
                     <div class="p-3">
-                        <h5 class="fw-bold">Football Championship Final</h5>
-                        <p class="text-muted">Inter-university championship – the ultimate showdown.</p>
-                        <button class="btn btn-dark w-100">View Details</button>
+                        <h5 class="event-title">Football Championship Final</h5>
+                        <p class="event-description">Inter-university football championship finals - the ultimate showdown!</p>
+                        <div class="date-time">
+                            <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
+                            <p class="date">December 12 2025</p>
+                            <p class="time">05:00 PM</p>
+                        </div>
+                        <div class="location-of-event">
+                            <img src="assets/Icons/Pin.svg" alt="Location-Icon">
+                            <p class="location"> Qatar University Sports Complex</p>
+                        </div>
+                        <div class="type-of-event">
+                            <button class="event-type">
+                                <img src="assets/Icons/Star 1.svg" alt="Star-Icon">
+                                Sports
+                            </button>
+                        </div>
+                        <a href="login.html" class="btn btn-dark w-100">View Details</a>
                     </div>
                 </div>
             </div>
@@ -184,40 +145,52 @@
             <!-- Event 3 -->
             <div class="col-md-4">
                 <div class="event-card shadow">
-                    <img src="Images/foc.jpg" class="img-fluid"/>
+                    <div class="event-price">
+                        <img src="assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
+                        <p class="price">25 QAR</p>
+                    </div>
+                    <img src="assets/Images/foc.jpg" class="img-fluid"/>
                     <div class="p-3">
-                        <h5 class="fw-bold">Festival of Cultures</h5>
-                        <p class="text-muted">A celebration of all our diverse cultures and traditions.</p>
-                        <button class="btn btn-dark w-100">View Details</button>
+                        <h5 class="event-title">Festival Of Cultures</h5>
+                        <p class="event-description">Experience the world at our Festival of Cultures, celebrating the diverse traditions of our student community. Enjoy international cuisine, live performances, and activities that foster unity and cultural exchange.</p>
+                        <div class="date-time">
+                            <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
+                            <p class="date">February 7 2026</p>
+                            <p class="time">07:00 PM</p>
+                        </div>
+                        <div class="location-of-event">
+                            <img src="assets/Icons/Pin.svg" alt="Location-Icon">
+                            <p class="location">University of Doha Science and Technology (UDST)</p>
+                        </div>
+                        <div class="type-of-event">
+                            <button class="event-type">
+                                <img src="assets/Icons/Star 1.svg" alt="Star-Icon">
+                                Festival
+                            </button>
+                        </div>
+                        <a href="login.html" class="btn btn-dark w-100">View Details</a>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
 
-    <section class="container text-center my-5">
-        <img src="Images/Logo.svg" alt="Logo Shape">
+    <section class="get-started-container text-center my-5">
+        <img src="assets/Icons/Logo.svg" alt="Logo-Shape">
         <h2 class="fw-bold">Get Started in Seconds!</h2>
         <p>Create events or attend experiences by signing up. It only takes a minute!</p>
-        <a class="btn btn-dark btn-lg" href="#">Sign Up / Login</a>
+        <a class="btn btn-dark btn-lg" href="signup.html">Sign Up / Login</a>
     </section>
 
     <footer class="bg-white py-4 text-center shadow-sm">
-        <div class="container d-flex justify-content-center gap-4">
-            <a href="#">Create Event</a>
-            <a href="#">Events</a>
+        <div class="brand">
+            <img src="assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
+            <p class="company-name">Campus<b>Connect</b></p>
+        </div>
+        <div class="footer-links">
+            <a href="login.html">Create Event</a>
+            <a href="events.html">Events</a>
             <a href="#">Contact Us</a>
         </div>
-        <p class="mt-3 text-muted mb-0">© <span class="fs-3 me-1 lh-1">&#5491;</span>
-            <span>Campus<span class="fw-bold">Connect</span></span>
-        </p>
     </footer>
-
-    <!--
-      Loading Bootstrap JS
-      Assumes you have a folder named 'js' with bootstrap.bundle.min.js inside.
-      This file includes Popper.js and is needed for the mobile menu toggler.
-    -->
-    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

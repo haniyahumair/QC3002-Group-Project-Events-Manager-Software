@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page </title>
+
+    <link rel="stylesheet" href="styles/login-register.css">
 </head>
 <body>
     <!--Login Nav Section-->
 
-    <section class="nav">
-        <div class="name">
+    <section class="nav" style="margin-top: 24px;">
+        <div class="company">
             <div class="logo">
-                <img src="/Images/Logo.svg" alt="CampusConnect Logo">
+                <a href="home.html">
+                    <img src="assets/Icons/Logo.svg" alt="CampusConnect Logo">
+                </a>
             </div>
             <div class="title">
-                <h3>CampusConnect</h3>
+                <p class="company-name">Campus<b>Connect</b></p>
             </div>
         </div>
     </section>
@@ -24,7 +28,7 @@
         <div class="login-container">
             <div class="login-content">
                 <div class="text">
-                    <h2 class="-welcome-message">Welcome Back</h2>
+                    <h2 class="welcome-message">Welcome Back</h2>
                     <p class="sub-message"><i>Jump back in and start planning your next campus meetup!</i></p>
                 </div>
             </div>
@@ -37,7 +41,7 @@
                         <input type="password" name="password" id="password" placeholder="Password" required maxlength="8"/>
                     </div>
 
-                    <div class="submit-btn">
+                    <div class="l-submit-btn">
                         <input type="submit" value="Login" class="login-btn"/>
                     </div>
                 </form>  
@@ -50,7 +54,7 @@
 
     <!--Login Page Image-->
     <div class="signup-img">
-        <img src="/Images/website graphics.png" alt="Sign Up Image">
+        <img src="assets/Images/website graphics.png" alt="Sign Up Image">
     </div>
     </main>
        

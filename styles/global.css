@@ -1,0 +1,45 @@
+:root{
+    --white: #ffffff;
+    --black: #000000;
+    --primary-grey: #F2F2F2;
+    --seconday-grey: #E9E9E9;
+}
+
+body{
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/*Flex styling*/
+.flex {
+    display: flex;
+  }
+  
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+/*Button styline - nav transparent buttons*/
+.button-transparent {
+    background: none;
+    color: var(--black);
+    font-size: 1rem;
+    padding: 8px 15px;
+    border: 1px solid var(--black);
+    border-radius: 50px; 
+}
+  
