@@ -1,0 +1,1 @@
+//Logic to sign out, located in the profile.html

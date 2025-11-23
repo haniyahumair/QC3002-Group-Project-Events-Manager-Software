@@ -5,269 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusConnect</title>
 
-    <!--
-      Loading Bootstrap CSS
-      Assumes you have a folder named 'css' with bootstrap.min.css inside.
-    -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Styling links-->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/details.css">
 
-    <!-- Optional: Add custom styles here if needed to override Bootstrap -->
-    <style>
-        body {
-            background: #f2f2f2;
-        }
-
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .nav-link.active {
-            font-weight: bold;
-        }
-
-        .feature-box {
-            background: #e9e9e9;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .price-pill {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .price-free {
-            background-color: #28a745;
-        }
-
-        .price-paid {
-            background-color: #000;
-        }
-
-        footer {
-            background-color: #fff;
-            border-top: 1px solid #ccc;
-        }
-
-        .filter-box,
-        .filter-dropdown {
-            border: 2px solid #000;
-            border-radius: 20px;
-            padding: 15px 20px;
-            background: #fff;
-        }
-
-        .filter-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .dropdown-list {
-            margin-top: 15px;
-            border: 2px solid #000;
-            border-radius: 20px;
-            padding: 20px;
-            background: #fff;
-        }
-
-        .dropdown-list p {
-            margin: 8px 0;
-            font-size: 1.05rem;
-        }
-
-        .section-label {
-            color: #7a49ff;
-            font-weight: 600;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .dropdown-menu-custom {
-            display: none;
-            position: absolute;
-            background: #fff;
-            border: 1px solid #000;
-            border-radius: 10px;
-            padding: 10px 20px;
-            z-index: 1000;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn {
-            border: 1px solid #000;
-            border-radius: 25px;
-            padding: 8px 20px;
-            font-weight: 500;
-        }
-
-        .dropdown-menu-custom div {
-            cursor: pointer;
-            padding: 5px 0;
-        }
-
-        .dropdown-menu-custom div:hover {
-            text-decoration: underline;
-        }
-
-        .dropdown-menu-custom.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .event-card {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .event-card.hidden {
-            opacity: 0;
-            transform: scale(0.97);
-            pointer-events: none;
-            position: absolute;
-        }
-
-        .event-card img {
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-    </style>
 
 </head>
 <body>
-
-<!--
-  START: Bootstrap Header
-  - 'navbar-expand-lg': The menu will collapse on screens smaller than 'large' (tablets/phones).
-  - 'navbar-light' & 'bg-light': A standard light-colored theme. You can change 'bg-light' to 'bg-dark' and 'navbar-light' to 'navbar-dark' for a dark theme.
--->
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container-fluid">
-
-            <!-- Site Name (Brand) -->
-            <a class="navbar-brand" href="#">
-                <span class="fs-3 me-1 lh-1">&#5491;</span>
-                <span>Campus<span class="fw-bold">Connect</span></span>
-            </a>
-
-            <!-- Mobile Toggler Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Collapsible Menu -->
-            <div class="collapse navbar-collapse" id="main-nav">
-
-                <!--
-                  Left-side Nav Links
-                  - 'mx-auto' centers the nav.
-                  - 'nav-pills' styles the links as pills.
-                -->
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-pills">
-                    <li class="nav-item mx-1">
-                        <a class="nav-link rounded-pill border border-dark" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item mx-1">
-                        <a class="nav-link rounded-pill border border-dark" href="#">Events</a>
-                    </li>
-                    <li class="nav-item mx-1">
-                        <a class="nav-link rounded-pill border border-dark" href="#">Create Event</a>
-                    </li>
-                </ul>
-
-                <!--
-                  Right-side Login Button
-                  'ms-auto' (margin-start: auto) pushes this to the right.
-                -->
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <!--
-                          Styled as a button, but you can also just use 'nav-link'
-                          if you prefer a plain text link.
-                        -->
-                        <a class="btn btn-primary" href="#">Login</a>
-                    </li>
-                </ul>
-
-            </div> <!-- / .collapse -->
-        </div> <!-- / .container-fluid -->
-    </nav>
-</header>
-
-<section class="container py-5">
-    <div class="card card-custom">
-        <div class="position-relative">
-            <img src="https://placehold.co/1000x400" class="w-100" alt="Football Event">
-            <span class="price-pill price-free">Free</span>
-        </div>
-        <div class="card-body">
-            <h2 class="fw-bold">Football Championship Finals</h2>
-            <div class="mb-2">
-                <span class="badge bg-light text-dark border me-2">Sports</span>
-                <button class="btn btn-sm btn-outline-dark">Share</button>
+    <header>
+        <nav class="navbar">
+            <!-- Brand -->
+            <div class="brand-name">
+                <img src="assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
+                <p class="CampusConnect">Campus<b>Connect</b></p>
             </div>
-
-            <h5 class="mt-4 fw-bold">About Event</h5>
-            <p>Witness the ultimate showdown! The top university football teams compete for the championship trophy.
-                Cheer for your team in this electrifying finale of the inter-university league.</p>
-
-            <p><strong>What to expect:</strong></p>
-            <ul>
-                <li>Professional commentary</li>
-                <li>Halftime entertainment</li>
-                <li>Food trucks & refreshments</li>
-                <li>Trophy ceremony</li>
-                <li>Team meet & greet after match</li>
+    
+            <!-- Nav Links -->
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="create.html">Create Event</a>
+                </li>
             </ul>
 
-            <h5 class="mt-4 fw-bold">Event Details</h5>
-            <p><strong>📅 Date:</strong> Friday, December 12, 2025</p>
-            <p><strong>🕒 Time:</strong> 05:00 PM</p>
-            <p><strong>📍 Location:</strong> Qatar University Sports Complex</p>
-            <p><strong>📧 Contact Email:</strong> sports@qu.edu.qa</p>
+            <!--Icons shown when user is logged in-->
+            <div class="icons">
+                <a href="cart.html" class="cart-icon" id="cartIcon">
+                    <img src="assets/Icons/cart-Icon.svg" alt="Cart-Icon">
+                </a>
 
-            <div class="mt-4">
-                <button class="btn btn-dark w-100">Add to Cart</button>
+                <a href="profile.html" class="profile-icon" id="profileIcon">
+                    <img src="assets/Icons/user-Icon.svg" alt="User-Icon">
+                </a>
             </div>
+    
+            <!-- Login Button shown when logged out-->
+            <a class="btn-primary" href="login.html" id="loginBtn">Login</a>
+
+        </nav>
+    </header>
+
+<section class="event-details-container">
+    <div class="event-details">
+        <div class="event-image">
+            <div class="price-info">
+                <img src="assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
+                <p class="price">Free</p>
+            </div>
+            <img src="assets/Images/football.jpg" class="image" alt="Football Event" >
+        </div>
+
+        <div class="card-body">
+            <div class="header">
+                <h2 class="event-title">Football Championship Finals</h2>
+                <div class="detail-buttons">
+                    <button class="event-type">
+                        <img src="assets/Icons/Star 1.svg" alt="Star-Icon">
+                        Workshop
+                    </button>
+
+                    <button class="share-button">
+                        <img src="assets/Icons/Share Icon.svg" alt="Share-Icon">
+                        Share
+                    </button>
+                    
+                    <script>
+                        //share button logic
+                        const shareButton = document.querySelector('.share-button');
+                    
+                        shareButton.addEventListener('click', () => {
+                            const currentURL = window.location.href;
+                            console.log(currentURL); 
+                    
+                            navigator.clipboard.writeText(currentURL)
+                                .then(() => alert('URL copied to clipboard!'))
+                                .catch(err => console.error('Failed to copy URL:', err));
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="about">
+                <h5 class="heading">About Event</h5>
+                <p>Witness the ultimate showdown! The top university football teams compete for the championship trophy. Cheer for your team in this electrifying finale of the inter-university league.</p>
+
+                <p><strong>What to expect:</strong></p>
+                <ul>
+                    <li>Professional commentary</li>
+                    <li>Halftime entertainment</li>
+                    <li>Food trucks & refreshments</li>
+                    <li>Trophy ceremony</li>
+                    <li>Team meet & greet after match</li>
+                </ul>
+            </div>
+
+            <div class="details">
+                <h5 class="heading">Event Details</h5>
+                <p class="date"><strong>
+                    <img src="assets/Icons/Calendar.svg" alt="Calendar-icon" style="width: 18px; height: 18px; transform: translateY(3px);">
+                    Date:</strong> Friday, December 12, 2025</p>
+                <p class="time"><strong>
+                    <img src="assets/Icons/clock-icon.svg" alt="Clock-icon" style="width: 18px; height: 18px; transform: translateY(3px);">
+                    Time:</strong> 05:00 PM</p>
+                <p class="location"><strong>
+                    <img src="assets/Icons/Pin.svg" alt="Pin-icon" style="width: 18px; height: 18px; transform: translateY(3px);">
+                    Location:</strong> Qatar University Sports Complex</p>
+                <hr class="">
+                <p class="contact-email"><strong>
+                    <img src="assets/Icons/mail-icon.svg" alt="Mail-icon" style="width: 18px; height: 18px; transform: translateY(3px);">
+                    Contact Email:</strong> sports@qu.edu.qa</p>
+            </div>
+
+            <div class="cart-button">
+                <button class="cart-btn" id="cartBtn" onclick="">Add to Cart</button>
+            </div>
+
+            <script>
+                // goes to cart and adds the current event into cart
+            </script>
+            
         </div>
     </div>
 </section>
 
 <footer class="bg-white py-4 text-center shadow-sm">
-    <div class="container d-flex justify-content-center gap-4">
-        <a href="#">Create Event</a>
-        <a href="#">Events</a>
+    <div class="brand">
+        <img src="assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
+        <p class="company-name">Campus<b>Connect</b></p>
+    </div>
+    <div class="footer-links">
+        <a href="login.html">Create Event</a>
+        <a href="events.html">Events</a>
         <a href="#">Contact Us</a>
     </div>
-    <p class="mt-3 text-muted mb-0">© <span class="fs-3 me-1 lh-1">&#5491;</span>
-        <span>Campus<span class="fw-bold">Connect</span></span>
-    </p>
 </footer>
-<script>
+
+
+<!--<script>
     const categoriesBtn = document.getElementById('categoriesBtn');
     const priceBtn = document.getElementById('priceBtn');
     const categoriesDropdown = document.getElementById('categoriesDropdown');
@@ -314,13 +193,8 @@
         });
     });
 
-</script>
+</script>-->
 
-<!--
-  Loading Bootstrap JS
-  Assumes you have a folder named 'js' with bootstrap.bundle.min.js inside.
-  This file includes Popper.js and is needed for the mobile menu toggler.
--->
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="profileIcons.js"></script>
 </body>
 </html>
