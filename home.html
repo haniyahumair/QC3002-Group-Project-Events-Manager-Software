@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusConnect</title>
+
+    <!--Styling links-->
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/global.css">
+
+    <!--Logic Links-->
+    <script src="profileIcons.js"></script>
 </head>
 <body>
     <header>
@@ -28,9 +33,21 @@
                     <a class="nav-link" href="create.html">Create Event</a>
                 </li>
             </ul>
+
+            <!--Icons shown when user is logged in-->
+            <div class="icons">
+                <a href="cart.html" class="cart-icon" id="cartIcon">
+                    <img src="assets/Icons/cart-Icon.svg" alt="Cart-Icon">
+                </a>
+
+                <a href="profile.html" class="profile-icon" id="profileIcon">
+                    <img src="assets/Icons/user-Icon.svg" alt="User-Icon">
+                </a>
+            </div>
     
-            <!-- Login Button -->
-            <a class="btn-primary" href="login.html">Login</a>
+            <!-- Login Button shown when logged out-->
+            <a class="btn-primary" href="login.html" id="loginBtn">Login</a>
+
         </nav>
     </header>
 

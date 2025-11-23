@@ -58,6 +58,21 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/*Profile/Cart icons styling*/
+.icons a{ 
+    margin: 0px 8px;
+}
+
+.cart-icon img{
+    width: 24px;
+    height: 24px;
+}
+
+.profile-icon img{
+    width: 24px;
+    height: 24px'
+}
+
 /*Heading Text Styling*/
 .events-header {
     text-align: center;

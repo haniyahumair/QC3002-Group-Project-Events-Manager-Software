@@ -1,9 +1,4 @@
-:root{
-    --white: #ffffff;
-    --black: #000000;
-    --primary-grey: #F2F2F2;
-    --seconday-grey: #E9E9E9;
-}
+
 
 /*Home Page Styling*/
 body {
@@ -69,6 +64,22 @@ body {
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/*Profile/Cart icons styling*/
+.icons a{ 
+    margin: 0px 8px;
+}
+
+.cart-icon img{
+    width: 24px;
+    height: 24px;
+}
+
+.profile-icon img{
+    width: 24px;
+    height: 24px'
+}
+/*Hero styling*/
 
 .hero {
     padding: 80px 0;
