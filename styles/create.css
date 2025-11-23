@@ -1,0 +1,92 @@
+/*Hero Styling*/
+.hero {
+    padding-bottom: 50px;
+    padding-top: 30px;
+    text-align: center;
+    margin: 0;
+    gap: 0;
+}
+
+.hero h2{
+    font-size: 2.8rem;
+}
+
+.hero p{
+    font-size: 1.1rem;
+}
+
+/*Uploading photo styling*/
+section{
+    padding: 0 24px;
+    margin-bottom: 15px;
+}
+.upload-area {
+    border: 1px solid var(--black);
+    border-radius: 15px;
+    background: repeating-linear-gradient(45deg, #f8f9fa, #f8f9fa 20px, #e9ecef 20px, #e9ecef 40px);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.upload-area label{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.upload-area input{
+    translate: 30px 10px;
+}
+
+/*Form styling*/
+.create-events-form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.create-events-form .event-info{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.event-info .form-label{
+    font-size: 1.1rem;
+}
+
+.event-info input{
+    border: 1px solid var(--black);
+    border-radius: 50px;
+    padding: 12px;
+    font-size: 0.9rem;
+}
+
+.event-info textarea{
+    background-color: transparent;
+    font-size: 0.9rem;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.form-select{
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    border: 1px solid var(--black);
+    height: 30px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.create-events-form button{
+    padding: 12px 18px;
+    border-radius: 50px;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    font-size: 1rem;
+}

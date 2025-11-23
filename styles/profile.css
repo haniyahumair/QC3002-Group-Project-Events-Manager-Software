@@ -1,0 +1,228 @@
+section{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/*Profile card Styling*/
+.profile-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 70px 0;
+    width: auto;
+    gap: 20px;
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.profile-info{
+    padding: 0px 20px;
+}
+
+.profile-info h3{
+    font-size: 1.3rem;
+    margin: 0;
+    gap: 0;
+}
+
+.profile-info .student-email{
+    font-size: 0.9rem;
+    margin-bottom: 27px;
+}
+
+.profile-info a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 0.8rem;
+    border: 1px solid var(--black);
+    padding: 10px 40px;
+    border-radius: 50px;
+}
+
+.profile-card img{
+    background-color: var(--primary-grey);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 25px 25px;
+}
+
+/*Upcoming events styling*/
+.my-upcoming-events-container{
+    flex-direction: row;
+}
+/* Event Cards Styling */
+
+.my-upcoming-events-container .events-container{
+    background-color: var(--white);
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.events-container .event-card {
+    height: 550px;
+    width: 370px;
+    border-radius: 25px;
+    background-color: var(--primary-grey);
+}
+
+.event-card {
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    color: var(--black);
+}
+
+.event-card .event-price {
+    background-color: var(--white);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.event-card .event-price img {
+    width: 27px;
+    height: 27px;
+    align-content: center;
+    margin-top: 3px;
+}
+
+.event-card .price {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--black);
+    padding: 4px 12px;
+    display: inline-block;
+}
+
+.event-card .img-fluid {
+    width: 360px;
+    height: 260px;
+    border-radius: 25px;
+    object-fit: cover;
+    display: block;
+}
+
+.event-card .p-3 {
+    padding: 12px !important;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.event-card .p-3 h5 {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    font-size: 1.1rem;
+    color: var(--black);
+    line-height: 1.3;
+}
+
+.event-card .p-3 p {
+    font-size: 0.8rem;
+    margin-top: 0;
+    text-align: left !important;
+    width: fit-content;
+    color: var(--black);
+    padding: 0 0;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.date-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+}
+
+.date-time img {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 10px;
+}
+
+.date-time .date,
+.date-time .time {
+    margin: 0;
+}
+
+.date-time .time {
+    margin-left: 3px;
+}
+
+.location-of-event {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.location-of-event img {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}
+
+.location-of-event .location {
+    margin: 0;
+}
+
+.type-of-event {
+    margin-bottom: 10px;
+    margin-top: auto;
+}
+
+.event-type {
+    background-color: transparent;
+    align-items: flex-end;
+    border: 1px solid var(--black);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.event-type img {
+    width: 14px;
+    height: 14px;
+}
+
+.event-card a {
+    background-color: var(--black);
+    text-align: center;
+    border: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 9px 12px ;
+    border-radius: 10px;
+    margin-top: auto;
+}

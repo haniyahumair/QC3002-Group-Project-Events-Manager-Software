@@ -12,34 +12,119 @@ body{
     font-family: 'Arial', sans-serif;
 }
 
-/*Flex styling*/
-.flex {
-    display: flex;
-  }
-  
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-row{
+/*Navbar styling*/
+.navbar {
+    background-color: var(--white); 
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
 }
 
-/*Button styline - nav transparent buttons*/
-.button-transparent {
-    background: none;
-    color: var(--black);
+.navbar .brand-name {
+    display: flex;
+    align-items: center;
+    gap: 7px; 
+}
+
+.navbar .brand-name .logo {
+    width: 15px; 
+    height: auto;
+}
+
+.navbar .CampusConnect {
     font-size: 1rem;
+    color: var(--black);
+}
+
+.navbar-nav{
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+    justify-content: center;
+    margin-right: 5rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar-nav .nav-link {
+    color: var(--black);
+    font-size: 0.9rem;
     padding: 8px 15px;
     border: 1px solid var(--black);
     border-radius: 50px; 
+    background-color: var(--white);
+    text-decoration: none;
+    /*transition: background-color 0.3s ease, color 0.3s ease;*/
 }
-  
+
+.navbar-nav .nav-link, a{
+    text-decoration: none;
+}
+
+.navbar .btn-primary {
+    padding: 8px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*Profile/Cart icons styling*/
+.icons a{ 
+    margin: 0px 8px;
+}
+
+.cart-icon img{
+    width: 24px;
+    height: 24px;
+}
+
+.profile-icon img{
+    width: 24px;
+    height: 24px'
+}
+
+/*Footer styling*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--white);
+    padding: 20px 24px;
+    text-align: center;
+    color: var(--black);
+    font-size: 0.9rem; 
+}
+
+footer .brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 1rem;
+}
+footer .brand .logo {
+    width: 15px;
+    height: auto;
+}
+
+.footer-links{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.footer-links a{
+    color: var(--black);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--black);
+    border-radius: 50px;
+    padding: 8px 24px;
+}
