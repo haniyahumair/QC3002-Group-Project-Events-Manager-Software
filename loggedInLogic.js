@@ -51,5 +51,5 @@ function checkLoginStatus() {
     })
 }
 
-// Run when DOM is ready
+// run logic after loading
 document.addEventListener('DOMContentLoaded', checkLoginStatus);
