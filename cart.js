@@ -1,11 +1,46 @@
-//edit js file - from cart.html
+// helpers
+const safe = el => el !== null && el !== undefined;
+const qs = sel => document.querySelector(sel);
+const qsa = sel => Array.from(document.querySelectorAll(sel));
 
 const categoriesBtn = document.getElementById('categoriesBtn');
 const priceBtn = document.getElementById('priceBtn');
 const categoriesDropdown = document.getElementById('categoriesDropdown');
 const priceDropdown = document.getElementById('priceDropdown');
 
+// remove item logic
+window.removeItem = function removeItem(itemId) {
+    const el = document.getElementById(itemId);
+    if (!safe(el)) return;
+    
+    el.remove();
+};
 
+// quantity button logic
+function wireQuantityButtons() {
+    const qtyButtons = qsa('.qty-btn'); // matches cart.html 
+    if (!qtyButtons.length) return;
+    
+    qtyButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const change = parseInt(btn.getAttribute('data-change')) || 0;
+            const container = btn.closest('.quantity-control');
+            if (!container) return;
+            
+            const quantitySpan = container.querySelector('.quantity');
+            const hiddenInput = container.querySelector('input[type="hidden"]');
+            
+            let current = parseInt(quantitySpan.textContent) || 1;
+            current = Math.max(1, current + change);
+            
+            quantitySpan.textContent = current;
+            if (hiddenInput) hiddenInput.value = current;
+        });
+    });
+})();
+
+// dropdown logic
 function toggleDropdown(button, dropdown) {
     const isVisible = dropdown.classList.contains('show');
     document.querySelectorAll('.dropdown-menu-custom').forEach(menu => menu.classList.remove('show'));
@@ -22,7 +57,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// PRICE FILTER LOGIC
+// price filter logic
 if (priceDropdown) {
     const priceOptions = priceDropdown.querySelectorAll('div[data-filter]');
     const eventCards = document.querySelectorAll('.price-pill');
@@ -45,45 +80,23 @@ if (priceDropdown) {
             priceDropdown.classList.remove('show');
         });
     });
-
 }
 
-function removeItem(itemId) {
-    const element = document.getElementById(itemId);
-    if (element) {
-        element.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-            element.remove(); // Reflows document automatically
-        }, 400);
+// checkout form logic 
+function wireCheckout() {
+    const form = qs('#checkoutForm') || qs('form.checkout-form');
+    if (!safe(form)) return;
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); const fd = new FormData(form);
+        const entries = {};fd.forEach((value, key) => { entries[key] = value; }); 
+    });
+})();
+
+// close dropdown by clicking logic
+document.addEventListener('click', (event) => {
+    if (!event.target.closest('.filter-btn') && !event.target.closest('.dropdown-menu-custom')) {
+        document.querySelectorAll('.dropdown-menu-custom')
+            .forEach(m => m.classList.remove('show'));
     }
-}
-
-// Quantity control
-document.querySelectorAll('.quantity-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        e.preventDefault();
-        const change = parseInt(btn.getAttribute('data-change'));
-        const quantitySpan = btn.parentElement.querySelector('.quantity');
-        let current = parseInt(quantitySpan.textContent);
-        current += change;
-        if (current < 1) current = 1;
-        quantitySpan.textContent = current;
-        const hiddenInput = btn.parentElement.querySelector('input[type="hidden"]');
-        hiddenInput.value = current;
-    });
 });
-
-document.getElementById('checkoutForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const entries = {};
-    formData.forEach((value, key) => {
-        entries[key] = value;
-    });
-    console.log('Submitting quantities:', entries);
-    // Redirect or handle checkout logic here
-    alert('Proceeding to checkout with: ' + JSON.stringify(entries));
-});
-
