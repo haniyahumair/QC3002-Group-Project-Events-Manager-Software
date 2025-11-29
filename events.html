@@ -63,8 +63,8 @@
                 </div>
                 <div class="filter-buttons">
                     <button class="filter-btn" id="categoriesBtn">
-                        <img src="assets/Icons/Funnel Icon.svg" alt="Funnel Icon" class="me-2" width="12" height="12">
-                        All Categories</button>
+                        <img src="assets/Icons/Funnel Icon.svg" alt="Funnel Icon" class="me-2" width="12" height="12"> All Categories
+                    </button>
                     <div class="dropdown-menu-custom" id="categoriesDropdown">
                         <div>Academic</div>
                         <div>Sports</div>
@@ -78,37 +78,11 @@
                     </div>
                 </div>
 
-                <script>
-                    // Toggle Categories Dropdown
-                    const categoriesBtn = document.getElementById('categoriesBtn');
-                    const categoriesDropdown = document.getElementById('categoriesDropdown');
-
-                    categoriesBtn.addEventListener('click', () => {
-                        categoriesDropdown.classList.toggle('show');
-                    });
-
-                    // Close dropdown when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!e.target.closest('.filter-buttons')) {
-                            categoriesDropdown.classList.remove('show');
-                        }
-                    });
-
-                    // Handle category selection
-                    const categoryItems = categoriesDropdown.querySelectorAll('div');
-                    categoryItems.forEach(item => {
-                        item.addEventListener('click', () => {
-                            categoriesBtn.textContent = item.textContent;
-                            categoriesDropdown.classList.remove('show');
-                        });
-                    });
-                </script>
-
                 <div class="filter-buttons">
                     <button class="filter-btn" id="priceBtn">
                         <img src="assets/Icons/Coin Stacked Icon.svg" alt="Coin Stacked Icon" class="me-2" width="20"
-                            height="20">
-                        Filter By Price</button>
+                            height="20">Filter By Price
+                    </button>
                     <div class="dropdown-menu-custom price-btn" id="priceDropdown">
                         <div data-filter="all">All Events</div>
                         <div data-filter="free">Free</div>
@@ -116,28 +90,11 @@
                     </div>
                 </div>
 
-                <script>
-                    // Toggle Price Dropdown
-                    const priceBtn = document.getElementById('priceBtn');
-                    const priceDropdown = document.getElementById('priceDropdown');
-
-                    priceBtn.addEventListener('click', () => {
-                        priceDropdown.classList.toggle('show');
-                    });
-
-                    // Close dropdown when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!e.target.closest('.filter-buttons')) {
-                            priceDropdown.classList.remove('show');
-                        }
-                    });
-                </script>
-
                 <div class="filter-buttons">
                     <button class="filter-btn" id="dateBtn">
                         <img src="assets/Icons/Calendar.svg" alt="Calendar-Icon" class="me-2" width="20"
-                            height="20">
-                        Filter By Date</button>
+                            height="20">Filter By Date
+                    </button>
                     <div class="dropdown-menu-custom date-filter-btn" id="dateDropdown">
                         <div class="date-filter-form">
                             <label>Month</label>
@@ -153,27 +110,6 @@
                         </div>
                     </div>
                 </div>
-
-                <script>
-                    // Toggle Date Dropdown
-                    const dateBtn = document.getElementById('dateBtn');
-                    const dateDropdown = document.getElementById('dateDropdown');
-
-                    dateBtn.addEventListener('click', () => {
-                        dateDropdown.classList.toggle('show');
-                    });
-
-                    // Close dropdown when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!e.target.closest('.filter-buttons')) {
-                            dateDropdown.classList.remove('show');
-                        }
-                    });
-
-                    // Handle date filter application
-                    //if it matches the date in the event card, show it, else hide it
-                </script>
-
             </div>
         </div>
     </section>
@@ -190,10 +126,14 @@
             <img src="assets/Images/IMG_6404.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">AI in Action: Transforming Theory into Practice</h5>
-                <p class="event-description">This session will be delivered by Abdulrahman Hassan, and Information Security Expert, and is designed for those keen to explore practical applications of AI and bridge the gap between theory and real world impact.</p>
+                <p class="event-description">This session, delivered by Abdulrahman Hassan, is designed for those keen to explore practical applications of AI and bridge the gap between theory and real world impact.</p>
                 <div class="date-time">
                     <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">November 14 2025</p>
+                    <p class="date">
+                        <span class="month">November</span>
+                        <span class="day">14</span>
+                        <span class="year">2025</span>
+                    </p>
                     <p class="time">04:00 - 06:00 PM</p>
                 </div>
                 <div class="location-of-event">
@@ -206,7 +146,7 @@
                         Workshop
                     </button>
                 </div>
-                <a class="btn btn-dark w-100 viewDetailBtn">View Details</a>
+                <a class="btn btn-dark w-100 viewDetailBtn" data-id="1">View Details</a>
 
 
             </div>
@@ -224,7 +164,11 @@
                 <p class="event-description">Inter-university football championship finals - the ultimate showdown!</p>
                 <div class="date-time">
                     <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">December 12 2025</p>
+                    <p class="date">
+                        <span class="month">December</span>
+                        <span class="day">12</span>
+                        <span class="year">2025</span>
+                    </p>
                     <p class="time">05:00 PM</p>
                 </div>
                 <div class="location-of-event">
@@ -237,7 +181,7 @@
                         Sports
                     </button>
                 </div>
-                <<a class="btn btn-dark w-100 viewDetailBtn">View Details</a>
+                <a class="btn btn-dark w-100 viewDetailBtn" data-id="2">View Details</a>
             </div>
         </div>
     
@@ -250,10 +194,14 @@
             <img src="assets/Images/foc.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">Festival Of Cultures</h5>
-                <p class="event-description">Experience the world at our Festival of Cultures, celebrating the diverse traditions of our student community. Enjoy international cuisine, live performances, and activities that foster unity and cultural exchange.</p>
+                <p class="event-description">Experience the world at our Festival of Cultures, celebrating the diverse traditions of our student community.</p>
                 <div class="date-time">
                     <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">February 7 2026</p>
+                    <p class="date">
+                        <span class="month">February</span>
+                        <span class="day">6</span>
+                        <span class="year">2026</span>
+                    </p>
                     <p class="time">07:00 PM</p>
                 </div>
                 <div class="location-of-event">
@@ -266,7 +214,7 @@
                         Festival
                     </button>
                 </div>
-                <a class="btn btn-dark w-100 viewDetailBtn">View Details</a>
+                <a class="btn btn-dark w-100 viewDetailBtn" data-id="3">View Details</a>
             </div>
         </div>
     
@@ -279,10 +227,14 @@
             <img src="assets/Images/slide4-5.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">CMU-Q Statistical Consulting Center Workshop Series</h5>
-                <p class="event-description">This semester's workshops will introduce statistical methods for biological scientists, focusing on how to choose appropriate methods for different research scenarios.</p>
+                <p class="event-description">The workshops will introduce statistical methods for biological scientists, focusing on how to choose appropriate methods for different research scenarios.</p>
                 <div class="date-time">
                     <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">November 27, 2025</p>
+                    <p class="date">
+                        <span class="month">November</span>
+                        <span class="day">27</span>
+                        <span class="year">2025</span>
+                    </p>
                     <p class="time">03:00 PM - 05:00 PM</p>
                 </div>
                 <div class="location-of-event">
@@ -295,7 +247,7 @@
                         Workshop
                     </button>
                 </div>
-                <a class="btn btn-dark w-100 viewDetailBtn">View Details</a>
+                <a class="btn btn-dark w-100 viewDetailBtn" data-id="4">View Details</a>
             </div>
         </div>
     
@@ -308,10 +260,14 @@
             <img src="assets/Images/foc.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">Festival Of Cultures</h5>
-                <p class="event-description">Experience the world at our Festival of Cultures, celebrating the diverse traditions of our student community. Enjoy international cuisine, live performances, and activities that foster unity and cultural exchange.</p>
+                <p class="event-description">Experience the world at our Festival of Cultures, celebrating the diverse traditions of our student community.</p>
                 <div class="date-time">
                     <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">February 7 2026</p>
+                    <p class="date">
+                        <span class="month">February</span>
+                        <span class="day">7</span>
+                        <span class="year">2026</span>
+                    </p>
                     <p class="time">07:00 PM</p>
                 </div>
                 <div class="location-of-event">
@@ -324,7 +280,7 @@
                         Festival
                     </button>
                 </div>
-                <a class="btn btn-dark w-100 viewDetailBtn">View Details</a>
+                <a class="btn btn-dark w-100 viewDetailBtn" data-id="3">View Details</a>
             </div>
         </div>
     
@@ -338,10 +294,14 @@
             <div class="p-3">
                 <h5 class="event-title">AI, Skills, and the Future of (No) work</h5>
                 <p class="event-description">
-                    How is artificial intelligence reshaping labor markets? Who stands to win—or lose—from the AI revolution, and what are the broader implications for youth, societies, and inequality? Drawing on his research analyzing 1.5 billion online job vacancies, as well as his close tracking of AI-related venture capital investments, Professor Antoniades explores these questions.</p>
+                    How is artificial intelligence reshaping labor markets? Drawing on his research analyzing 1.5 billion online job vacancies, as well as his close tracking of AI-related venture capital investments, Professor Antoniades explores these questions.</p>
                 <div class="date-time">
                     <img src="assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">December 1 2025</p>
+                    <p class="date">
+                        <span class="month">December</span>
+                        <span class="day">1</span>
+                        <span class="year">2025</span>
+                    </p>
                     <p class="time">06:00 - 08:00PM</p>
                 </div>
                 <div class="location-of-event">
@@ -354,7 +314,7 @@
                         Workshop
                     </button>
                 </div>
-                <a class="btn btn-dark w-100 viewDetailBtn">View Details</a>
+                <a class="btn btn-dark w-100 viewDetailBtn" data-id="5">View Details</a>
             </div>
         </div>
     
@@ -374,66 +334,8 @@
     
     <!--Logic Links-->
     <script src="loggedInLogic.js"></script>
-    <script type="module" src="js/events.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    
-    
-    
-    <!--<script>
-    const categoriesBtn = document.getElementById('categoriesBtn');
-    const priceBtn = document.getElementById('priceBtn');
-    const categoriesDropdown = document.getElementById('categoriesDropdown');
-    const priceDropdown = document.getElementById('priceDropdown');
-
-
-    function toggleDropdown(button, dropdown) {
-        const isVisible = dropdown.classList.contains('show');
-        document.querySelectorAll('.dropdown-menu-custom').forEach(menu => menu.classList.remove('show'));
-        if (!isVisible) dropdown.classList.add('show');
-    }
-
-
-    categoriesBtn.addEventListener('click', () => toggleDropdown(categoriesBtn, categoriesDropdown));
-    priceBtn.addEventListener('click', () => toggleDropdown(priceBtn, priceDropdown));
-
-
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.filter-btn') && !event.target.closest('.dropdown-menu-custom')) {
-            document.querySelectorAll('.dropdown-menu-custom').forEach(menu => menu.classList.remove('show'));
-        }
-    });
-
-    // PRICE FILTER LOGIC
-    const priceOptions = priceDropdown.querySelectorAll('div[data-filter]');
-    const eventCards = document.querySelectorAll('.price-pill');
-
-    priceOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const filter = option.dataset.filter;
-            priceBtn.textContent = `★ ${option.textContent}`;
-
-            eventCards.forEach(card => {
-                let parent = card.parentElement.parentElement;
-                parent.classList.remove('hidden');
-                if (filter === 'free' && !card.classList.contains('price-free')) {
-                    parent.classList.add('hidden');
-                } else if (filter === 'paid' && !card.classList.contains('price-paid')) {
-                    parent.classList.add('hidden');
-                }
-            });
-
-            priceDropdown.classList.remove('show');
-        });
-    });
-
-</script>
-
-<!--
-  Loading Bootstrap JS
-  Assumes you have a folder named 'js' with bootstrap.bundle.min.js inside.
-  This file includes Popper.js and is needed for the mobile menu toggler.
--->
+    <script src="cardDetails.js"></script>
+    <script src="events.js"></script>
 </body>
-
 
 </html>
