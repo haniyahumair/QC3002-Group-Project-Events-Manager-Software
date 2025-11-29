@@ -438,3 +438,7 @@ footer .brand .logo {
     border-radius: 50px;
     padding: 8px 24px;
 }
+
+.hidden{
+    display: none;
+}
