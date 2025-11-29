@@ -24,3 +24,30 @@ categoriesBtn.addEventListener("click", () =>
 priceBtn.addEventListener("click", () =>
     toggleDropdown(priceBtn, priceDropdown)
 );
+
+// price filtering (based on free/paid events)
+const priceOptions = priceDropdown.querySelectorAll("div[data-filter]");
+
+priceOptions.forEach(option => {
+    option.addEventListener("click", () => {
+        const filter = option.dataset.filter;
+        priceBtn.textContent = '${option.textContent}';
+
+        eventCards.forEach(card => {
+            const pill = card.querySelector(".price-pill");
+            const Free = pill.classList.contains("price-free");
+            const Paid = pill.classList.contains("price-paid");
+
+            card.classList.remove("hidden");
+
+            if (filter === "free" && !Free) {
+                card.classList.add("hidden");
+            }
+            else if (filter === "paid" && !Paid) {
+                card.classList.add("hidden");
+            }
+        });
+
+        priceDropdown.classList.remove("show");
+    });
+});
