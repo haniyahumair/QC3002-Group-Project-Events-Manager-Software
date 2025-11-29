@@ -1,53 +1,115 @@
-// events.js
-const categoriesBtn = document.getElementById("categoriesBtn"); 
-const priceBtn = document.getElementById("priceBtn"); 
-const categoriesDropdown = document.getElementById("categoriesDropdown"); 
-const priceDropdown = document.getElementById("priceDropdown"); 
-const eventCards = document.querySelectorAll(".event-card"); const pricePills = document.querySelectorAll(".price-pill");
+const categoriesBtn = document.getElementById("categoriesBtn");
+const priceBtn = document.getElementById("priceBtn");
+const categoriesDropdown = document.getElementById("categoriesDropdown");
+const priceDropdown = document.getElementById("priceDropdown");
+const dateDropdown = document.getElementById("dateDropdown");
+const dateBtn = document.getElementById('dateBtn')
+const eventCards = document.querySelectorAll(".event-card");
 
-// dropdown toggle
+// Toggle Dropdowns
 function toggleDropdown(button, dropdown) {
     const isVisible = dropdown.classList.contains("show");
-
-    document.querySelectorAll(".dropdown-menu-custom")
-        .forEach(menu => menu.classList.remove("show"));
-
+    document.querySelectorAll(".dropdown-menu-custom").forEach(menu => menu.classList.remove("show"));
     if (!isVisible) {
         dropdown.classList.add("show");
     }
 }
 
-categoriesBtn.addEventListener("click", () =>
-    toggleDropdown(categoriesBtn, categoriesDropdown)
-);
+categoriesBtn.addEventListener("click", () => toggleDropdown(categoriesBtn, categoriesDropdown));
+priceBtn.addEventListener("click", () => toggleDropdown(priceBtn, priceDropdown));
+dateBtn.addEventListener("click", () => toggleDropdown(dateBtn, dateDropdown))
 
-priceBtn.addEventListener("click", () =>
-    toggleDropdown(priceBtn, priceDropdown)
-);
+// category filter
+if (categoriesDropdown) {
+    const categoryType = categoriesDropdown.querySelectorAll('div');
+    categoryType.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedItem = option.textContent.trim();
+            categoriesBtn.textContent = selectedItem;
+            
+            eventCards.forEach(card => {
+                const eventTypeBtn = card.querySelector('.event-type');
+                const eventType = eventTypeBtn.textContent.trim();
 
-// price filtering (based on free/paid events)
-const priceOptions = priceDropdown.querySelectorAll("div[data-filter]");
+                card.classList.remove('hidden');
+                if (eventType !== selectedItem) {
+                    card.classList.add('hidden');
+                }
+            });
+            categoriesDropdown.classList.remove('show');
+        });
+    });
+}
 
-priceOptions.forEach(option => {
-    option.addEventListener("click", () => {
-        const filter = option.dataset.filter;
-        priceBtn.textContent = '${option.textContent}';
+// price filter
+if (priceDropdown) {
+    const priceOptions = priceDropdown.querySelectorAll("div[data-filter]");
+    priceOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            const filter = option.dataset.filter;
+            priceBtn.textContent = `${option.textContent}`;
+            eventCards.forEach(card => {
+                const cardPrice = card.querySelector(".price");
+                const priceText = cardPrice.textContent.trim().toLowerCase();
+                
+                card.classList.remove("hidden");
+                if (filter === "free" && priceText !== "free") {
+                    card.classList.add("hidden");
+                }
+                else if (filter === "paid" && priceText === "free") {
+                    card.classList.add("hidden");
+                }
+            });
+            priceDropdown.classList.remove("show");
+        });
+    });
+}
 
+// date filter
+if (dateDropdown) {
+    const applyFilterBtn = document.getElementById('applyDateFilter');
+    applyFilterBtn.addEventListener('click', () => {
+        const monthInput = document.getElementById('monthInput').value.trim().toLowerCase();
+        const dayInput = document.getElementById('dayInput').value.trim();
+        const yearInput = document.getElementById('yearInput').value.trim();
+        
         eventCards.forEach(card => {
-            const pill = card.querySelector(".price-pill");
-            const Free = pill.classList.contains("price-free");
-            const Paid = pill.classList.contains("price-paid");
-
-            card.classList.remove("hidden");
-
-            if (filter === "free" && !Free) {
-                card.classList.add("hidden");
+            const month = card.querySelector('.month').textContent;
+            const day = card.querySelector('.day').textContent;
+            const year = card.querySelector('.year').textContent;
+            
+            card.classList.remove('hidden');
+            if (monthInput && month.toLowerCase() !== monthInput) {
+                card.classList.add('hidden');
             }
-            else if (filter === "paid" && !Paid) {
-                card.classList.add("hidden");
+            if (dayInput && day !== dayInput) {
+                card.classList.add('hidden');
+            }
+            if (yearInput && year !== yearInput) {
+                card.classList.add('hidden');
             }
         });
-
-        priceDropdown.classList.remove("show");
+        dateDropdown.classList.remove('show');
     });
+}
+
+// search events filter
+const searchInput = document.querySelector('.form-control');
+if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        eventCards.forEach(card => {
+            const title = card.querySelector('.event-title').textContent.toLowerCase();
+            card.classList.remove('hidden');
+            if (!title.includes(searchTerm)) {
+                card.classList.add('hidden');
+            }
+        });
+    });
+}
+
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".filter-buttons") && !e.target.closest(".dropdown-menu-custom")) {
+        document.querySelectorAll(".dropdown-menu-custom").forEach(menu => menu.classList.remove("show"));
+    }
 });
