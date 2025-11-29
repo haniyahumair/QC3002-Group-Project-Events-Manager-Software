@@ -1,9 +1,11 @@
-import { getAuth } from './auth.js';
+//import { getAuth } from './auth.js';
+let isLoggedIn = true;
+
 
 function checkLoginStatus() {
   // retrieve user status from login/signup 
-  const user = JSON.parse(localStorage.getItem("authUser"));
-  const isLoggedIn = Boolean(user);
+  //const user = JSON.parse(localStorage.getItem("authUser"));
+  //const isLoggedIn = Boolean(user);
   
   // UI elements to be shown based on whether the user is logged in or not
   const profileIcon = document.getElementById('profileIcon');
