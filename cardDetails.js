@@ -120,8 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
            cart.push(eventId);
            sessionStorage.setItem('cart', JSON.stringify(cart));
            alert('Added to cart');
+           window.location.href = 'cart.html';
          } else {
            alert('Already in cart');
+           window.location.href = 'cart.html';
          }
        });
      }
