@@ -35,6 +35,11 @@ if (categoriesDropdown) {
                 if (eventType !== selectedItem) {
                     card.classList.add('hidden');
                 }
+
+                // Show all events if "All Events" is selected
+                if (selectedItem === "All Events") {
+                    card.classList.remove('hidden');
+                }
             });
             categoriesDropdown.classList.remove('show');
         });
