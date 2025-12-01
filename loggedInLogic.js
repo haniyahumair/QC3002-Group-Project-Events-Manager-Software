@@ -1,11 +1,11 @@
-//import { getAuth } from './auth.js';
-let isLoggedIn = true;
+import { getAuth } from './auth.js';
+//let isLoggedIn = true;
 
 
 function checkLoginStatus() {
   // retrieve user status from login/signup 
-  //const user = JSON.parse(localStorage.getItem("authUser"));
-  //const isLoggedIn = Boolean(user);
+  const authData = getAuth();
+  const isLoggedIn = authData.isAuthenticated;
   
   // UI elements to be shown based on whether the user is logged in or not
   const profileIcon = document.getElementById('profileIcon');
@@ -56,6 +56,5 @@ function checkLoginStatus() {
     });
   }
 }
-
 // run logic after loading
 document.addEventListener('DOMContentLoaded', checkLoginStatus);

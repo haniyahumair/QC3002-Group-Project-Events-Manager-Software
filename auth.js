@@ -13,7 +13,7 @@ export function getAuth() {
 export function setAuth(user) {
   localStorage.setItem(AUTH_KEY, JSON.stringify({ isAuthenticated: true, user}))
 }
-export function setAuth(user) {
+export function clearAuth(user) {
   localStorage.removeItem(AUTH_KEY);
 }
 

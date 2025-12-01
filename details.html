@@ -145,56 +145,9 @@
     </div>
 </footer>
 
-
-<!--<script>
-    const categoriesBtn = document.getElementById('categoriesBtn');
-    const priceBtn = document.getElementById('priceBtn');
-    const categoriesDropdown = document.getElementById('categoriesDropdown');
-    const priceDropdown = document.getElementById('priceDropdown');
-
-
-    function toggleDropdown(button, dropdown) {
-        const isVisible = dropdown.classList.contains('show');
-        document.querySelectorAll('.dropdown-menu-custom').forEach(menu => menu.classList.remove('show'));
-        if (!isVisible) dropdown.classList.add('show');
-    }
-
-
-    categoriesBtn.addEventListener('click', () => toggleDropdown(categoriesBtn, categoriesDropdown));
-    priceBtn.addEventListener('click', () => toggleDropdown(priceBtn, priceDropdown));
-
-
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.filter-btn') && !event.target.closest('.dropdown-menu-custom')) {
-            document.querySelectorAll('.dropdown-menu-custom').forEach(menu => menu.classList.remove('show'));
-        }
-    });
-
-    // PRICE FILTER LOGIC
-    const priceOptions = priceDropdown.querySelectorAll('div[data-filter]');
-    const eventCards = document.querySelectorAll('.price-pill');
-
-    priceOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const filter = option.dataset.filter;
-            priceBtn.textContent = `★ ${option.textContent}`;
-
-            eventCards.forEach(card => {
-                let parent = card.parentElement.parentElement;
-                parent.classList.remove('hidden');
-                if (filter === 'free' && !card.classList.contains('price-free')) {
-                    parent.classList.add('hidden');
-                } else if (filter === 'paid' && !card.classList.contains('price-paid')) {
-                    parent.classList.add('hidden');
-                }
-            });
-
-            priceDropdown.classList.remove('show');
-        });
-    });
-
-</script>-->
-
-<script src="loggedInLogic.js"></script>
+    <script type="module" src="loggedInLogic.js"></script>
+    <script src="cardDetails.js"></script>
+    <script type="module"  src="login.js"></script>
+    <script type="module" src="signup.js"></script>
 </body>
 </html>

@@ -86,12 +86,16 @@ if (priceDropdown) {
 function wireCheckout() {
     const form = qs('#checkoutForm') || qs('form.checkout-form');
     if (!safe(form)) return;
-    
+
     form.addEventListener('submit', (e) => {
-        e.preventDefault(); const fd = new FormData(form);
-        const entries = {};fd.forEach((value, key) => { entries[key] = value; }); 
+        e.preventDefault();
+        const fd = new FormData(form);
+        const entries = {};
+        fd.forEach((value, key) => {
+            entries[key] = value;
+        });
     });
-})();
+}
 
 // close dropdown by clicking logic
 document.addEventListener('click', (event) => {
