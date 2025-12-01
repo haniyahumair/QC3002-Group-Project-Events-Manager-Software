@@ -5,10 +5,11 @@ section{
 }
 
 .cart-container h2{
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     text-align: center;
     margin-bottom: 80px;
     margin-top: 50px;
+    font-family: var(--header-font);
 }
 
 form{
@@ -46,8 +47,9 @@ form{
     transform: translateY(30px);
 }
 .item-details h5{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
+    font-family: var(--subheader-font);
 }
 
 .item-details p{
@@ -144,6 +146,7 @@ form{
     font-size: 1rem;
     border: none;
     border-radius: 15px;
+    font-family: var(--subheader-font);
 }
 
 

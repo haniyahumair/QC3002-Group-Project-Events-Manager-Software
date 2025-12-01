@@ -8,7 +8,8 @@
 }
 
 .hero h2{
-    font-size: 2.8rem;
+    font-size: 3.1rem;
+    font-family: var(--header-font);
 }
 
 .hero p{
@@ -35,7 +36,8 @@ section{
 
 .upload-area label{
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--subheader-font);
 }
 
 .upload-area input{

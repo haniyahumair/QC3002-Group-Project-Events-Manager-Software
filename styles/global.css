@@ -1,15 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
 :root{
     --white: #ffffff;
     --black: #000000;
     --primary-grey: #F2F2F2;
     --seconday-grey: #E9E9E9;
+    --header-font: 'Fraunces', serif;
+    --subheader-font: 'Inter', sans-serif;
+    --text-font: 'Manrope', sans-serif;
 }
 
 body{
     background-color: var(--white);
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--text-font);
 }
 
 /*Navbar styling*/
@@ -86,6 +96,11 @@ body{
 .profile-icon img{
     width: 24px;
     height: 24px'
+}
+
+/*event card header font*/
+.event-title{
+    font-family: var(--subheader-font);
 }
 
 /*Footer styling*/
