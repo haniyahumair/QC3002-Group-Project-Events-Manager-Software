@@ -180,37 +180,34 @@ campus-connect/
    - View your upcoming events in your profile
    - Access your profile by clicking the user icon in the navigation bar
 
-### For Event Organizers
-
-1. **Create an Event**
-   - Login to your account
-   - Click "Create Event" in the navigation bar
-   - Fill in event details:
-     - Event title and description
-     - Date and time
-     - Venue location
-     - Price (or mark as free)
-     - Event category
-   - Submit event
-   - Event enters "pending approval" status (UI implemented)
-
-2. **View Your Created Events**
-   - Go to your profile page
-   - Scroll to "My Created Events" section
-   - View all events you've created
-
 ---
 
 ## 📸 Screenshots
 
-*Add screenshots here showing:*
 - Homepage with event cards
-- Event detail page
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/7c895f91-ca2b-488a-b715-fbc316505b37" />
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/e9b9d8c4-7d66-4c32-8ca4-31e4e9d2521a" />
+- Event page
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/891512b8-fcdf-4965-871e-e100bc80c82b" />
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/e1183897-7532-473b-8049-9f1001ebe86a" />
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/1d72254a-b9d8-463a-95a4-27671f9ef232" />
+- Event Detail page
+  <img width="1267" height="716" alt="image" src="https://github.com/user-attachments/assets/41f857ee-1c6c-427a-8d34-806b2e2221a8" />
+  <img width="1267" height="716" alt="image" src="https://github.com/user-attachments/assets/b325e19f-34a6-4f4a-9620-cfc00f217774" />
 - Registration flow
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/2acb0f21-0e07-45a8-9940-5817b5e3f412" />
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/ba9580d7-f385-4faf-904a-6aa4028a2996" />
 - User profile
+  <img width="1267" height="720" alt="image" src="https://github.com/user-attachments/assets/52f0af39-65fa-4ee3-9ff1-f7f6bfffe7f9" />
+  <img width="1267" height="610" alt="image" src="https://github.com/user-attachments/assets/50b86dc5-139e-4349-b1d4-e2e4eac2e122" />
+  <img width="1267" height="633" alt="image" src="https://github.com/user-attachments/assets/aac86014-f674-4f6d-8663-7992b0a3cbda" />
 - Event creation form
+  <img width="1267" height="712" alt="image" src="https://github.com/user-attachments/assets/6fa1b1f9-3162-4595-ba82-d2eaf6a8afe0" />
+  <img width="1267" height="716" alt="image" src="https://github.com/user-attachments/assets/3f6da120-08f5-43f2-ba48-731d406c6520" />
 - Cart page
-
+  <img width="1267" height="716" alt="image" src="https://github.com/user-attachments/assets/470b34a8-a258-45f0-a9f0-cc9d4f51fa2e" />
+  <img width="1267" height="716" alt="image" src="https://github.com/user-attachments/assets/50e79265-730a-4283-8b05-66bbef5bb850" />
+  
 ---
 
 ## 🔮 Future Enhancements
