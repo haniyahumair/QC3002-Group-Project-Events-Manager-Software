@@ -143,3 +143,42 @@ footer .brand .logo {
     border-radius: 50px;
     padding: 8px 24px;
 }
+
+/*Card Hover Styling*/
+.event-card:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    transition: all 0.5s ease-in-out;
+}
+
+/*Mobile layout*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: left;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        margin-right: 0;
+        gap: 5px;
+    }
+
+    footer {
+        flex-direction: row;
+        text-align: center;
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .event-card:hover{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transform: translateY(-5px);
+        transition: all 0.5s ease-in-out;
+    }
+}

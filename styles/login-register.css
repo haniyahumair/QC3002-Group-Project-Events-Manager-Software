@@ -157,3 +157,26 @@ main{
     cursor: pointer;
     margin-top: 30px;
 }
+
+/*Mobile layout*/
+@media (max-width: 768px){
+    main{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+    .login-form, sign-up-form{
+        margin-bottom: 0;
+    }
+
+    .signup-img img{
+        width: 100%;
+    }
+
+    body {
+        margin-left: 20px;
+    }
+}

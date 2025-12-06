@@ -54,6 +54,9 @@ function checkLoginStatus() {
         }
       });
     });
+
+    // view database on web console
+    console.log('User is logged in:', isLoggedIn);
   }
 }
 // run logic after loading

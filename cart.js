@@ -54,6 +54,18 @@ function wireCheckout() {
     });
 }
 
+//if price is not free then show alert message on checkout
+const priceElement = document.getElementById('.item-price');
+if (priceElement && priceElement.textContent.trim().toLowerCase() !== 'free') {
+    const checkoutButton = document.getElementById('checkoutButton');   
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Please select free event. Payment methods are not supported yet.');
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded',  () => {
     wireQuantityButtons();
     wireCheckout();
