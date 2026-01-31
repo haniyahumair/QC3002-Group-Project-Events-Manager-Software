@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         time: "04:00 - 06:00 PM",
         location: "AFG College, University of Aberdeen",
         price: "Free",
-        image: "assets/Images/IMG_6404.jpg",
+        image: "/assets/Images/IMG_6404.jpg",
         contact: "ai@university.edu"
       },
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         time: "05:00 PM",
         location: "Qatar University Sports Complex",
         price: "Free",
-        image: "assets/Images/football.jpg",
+        image: "/assets/Images/football.jpg",
         contact: "sports@qu.edu.qa"
       },
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         time: "07:00 PM",
         location: "University of Doha Science and technology (UDST)",
         price: "25 QAR",
-        image: "assets/Images/foc.jpg",
+        image: "/assets/Images/foc.jpg",
         contact: "foc@university.edu"
       },
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         time: "03:00 PM - 05:00 PM",
         location: "3178 CMU-Q",
         price: "Free",
-        image: "assets/Images/slide4-5.jpg",
+        image: "/assets/Images/slide4-5.jpg",
         contact: "stat@cmu.edu"
       },
 
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         time: "06:00 - 08:00 PM",
         location: "Auditorium Georgetown University Qatar",
         price: "Free",
-        image: "assets/Images/Directors-Cut_Events-Homepage.jpg.avif",
+        image: "/assets/Images/Directors-Cut_Events-Homepage.jpg.avif",
         contact: "stat@cmu.edu"
       }
     };

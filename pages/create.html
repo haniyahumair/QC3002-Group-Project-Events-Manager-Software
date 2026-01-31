@@ -6,8 +6,8 @@
     <title>CampusConnect</title>
 
     <!--Styling Links-->
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/create.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/pages/create.css">
 </head>
 <body>
 
@@ -16,31 +16,31 @@
         <nav class="navbar">
             <!-- Brand -->
             <div class="brand-name">
-                <img src="assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
+                <img src="/assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
                 <p class="CampusConnect">Campus<b>Connect</b></p>
             </div>
     
             <!-- Nav Links -->
             <ul class="navbar-nav">
                 <li>
-                    <a class="nav-link active" href="home.html">Home</a>
+                    <a class="nav-link active" href="/pages/index.html">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="events.html">Events</a>
+                    <a class="nav-link" href="/pages/events.html">Events</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="create.html">Create Event</a>
+                    <a class="nav-link" href="/pages/create.html">Create Event</a>
                 </li>
             </ul>
 
             <!--Icons shown when user is logged in-->
             <div class="icons">
-                <a href="cart.html" class="cart-icon" id="cartIcon">
-                    <img src="assets/Icons/cart-Icon.svg" alt="Cart-Icon">
+                <a href="/pages/cart.html" class="cart-icon" id="cartIcon">
+                    <img src="/assets/Icons/cart-Icon.svg" alt="Cart-Icon">
                 </a>
 
-                <a href="profile.html" class="profile-icon" id="profileIcon">
-                    <img src="assets/Icons/user-Icon.svg" alt="User-Icon">
+                <a href="/pages/profile.html" class="profile-icon" id="profileIcon">
+                    <img src="/assets/Icons/user-Icon.svg" alt="User-Icon">
                 </a>
             </div>
     
@@ -121,21 +121,21 @@
 
 <footer class="bg-white py-4 text-center shadow-sm">
     <div class="brand">
-        <img src="assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
+        <img src="/assets/Icons/Logo.svg" alt="CampusConnect Logo" class="logo">
         <p class="company-name">Campus<b>Connect</b></p>
     </div>
     <div class="footer-links">
-        <a href="login.html">Create Event</a>
-        <a href="events.html">Events</a>
+        <a href="/pages/login.html">Create Event</a>
+        <a href="/pages/events.html">Events</a>
         <a href="#">Contact Us</a>
     </div>
 </footer>
 
 <!--Logic Links-->
-    <script type="module" src="loggedInLogic.js"></script>
-    <script src="cardDetails.js"></script>
-    <script type="module"  src="login.js"></script>
-    <script type="module" src="signup.js"></script> 
-    <script type="module" src="eventsDatabase.js"></script>
+    <script type="module" src="/scripts/services/loggedInLogic.js"></script>
+    <script src="/scripts/services/cardDetails.js"></script>
+    <script type="module"  src="/scripts/pages/login.js"></script>
+    <script type="module" src="/scripts/pages/signup.js"></script> 
+    <script type="module" src="/scripts/services/eventsDatabase.js"></script>
 </body>
 </html>
