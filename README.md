@@ -242,13 +242,13 @@ campus-connect/
 
 **Backend Integration**
 - [ ] Node.js/Express server implementation
-- [ ] MongoDB database for persistent storage
+- [ ] Superbase integration for database
 - [ ] RESTful API for frontend-backend communication
 - [ ] Secure password hashing (bcrypt)
 - [ ] JWT-based authentication
 
 **Event Management**
-- [ ] Admin approval dashboard
+- [ ] Admin dashboard
 - [ ] Edit/delete events after creation
 - [ ] Event cancellation
 - [ ] Attendance tracking for organizers
