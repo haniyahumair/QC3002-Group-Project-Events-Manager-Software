@@ -128,29 +128,55 @@ Inspired by the success of Classmate (a student discount platform in Qatar), Cam
 
 ```
 campus-connect/
+campus-connect/
 ├── assets/
-│   ├── Icons/          # UI icons and logos
-│   └── Images/         # Event images and graphics
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+│
 ├── styles/
-│   ├── global.css      # Shared styles
-│   ├── home.css        # Homepage styles
-│   ├── events.css      # Events page styles
-│   ├── cart.css        # Cart page styles
-│   ├── profile.css     # Profile page styles
-│   └── login-register.css
-├── auth.js             # Authentication logic
-├── login.js            # Login functionality
-├── signup.js           # Registration functionality
-├── cart.js             # Cart management
-├── loggedInLogic.js    # Navigation & auth state UI
-├── cardDetails.js      # Event card interactions
-├── home.html           # Landing page
-├── events.html         # Browse events page
-├── create.html         # Create event page
-├── cart.html           # Shopping cart page
-├── profile.html        # User profile page
-├── login.html          # Login page
-├── signup.html         # Registration page
+│   ├── main.css
+│   ├── components/
+│   │   ├── navbar.css
+│   │   ├── card.css
+│   │   └── modal.css
+│   └── pages/
+│       ├── home.css
+│       ├── events.css
+│       └── profile.css
+│
+├── scripts/
+│   ├── config/
+│   │   └── supabase.js          # Supabase client initialization
+│   ├── services/
+│   │   ├── authService.js       # All auth-related functions
+│   │   ├── eventService.js      # All event CRUD operations
+│   │   ├── cartService.js       # Cart operations
+│   │   └── profileService.js    # User profile operations
+│   ├── utils/
+│   │   ├── helpers.js           # Utility functions
+│   │   └── validation.js        # Form validation
+│   └── pages/
+│       ├── home.js              # Home page specific logic
+│       ├── events.js            # Events page logic
+│       ├── login.js             # Login page logic
+│       ├── signup.js            # Signup page logic
+│       ├── profile.js           # Profile page logic
+│       └── cart.js              # Cart page logic
+│
+├── pages/ (or root level - your choice)
+│   ├── index.html               # Home page
+│   ├── events.html              # Events listing
+│   ├── event-details.html       # Single event view
+│   ├── login.html               # Login page
+│   ├── signup.html              # Signup page
+│   ├── profile.html             # User profile
+│   ├── cart.html                # Shopping cart
+│   └── create-event.html        # Create new event
+│
+├── .env.example                 # Example environment variables
+├── .gitignore
+├── config.js                    # Public config (loaded in HTML)
 └── README.md
 ```
 
