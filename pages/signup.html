@@ -3,22 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up page </title>
-
+    <title>Sign Up - Campus Connect</title>
     <link rel="stylesheet" href="/styles/pages/login-register.css">
+    <style>
+        /* Additional styles for role selection */
+        .role-selection {
+            margin-bottom: 25px;
+        }
+
+        .role-selection h3 {
+            margin-bottom: 15px;
+            color: var(--black, #333);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .role-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .role-option {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .role-option input[type="radio"] {
+            display: none;
+        }
+
+        .role-card {
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .role-option input[type="radio"]:checked + .role-card {
+            border-color: #4CAF50;
+            background: #f0f8f0;
+        }
+
+        .role-card:hover {
+            border-color: #4CAF50;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .role-icon {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .role-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .role-desc {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Student/Admin specific fields */
+        #studentFields,
+        #adminFields {
+            margin-top: 15px;
+        }
+
+        .info-message {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #856404;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
     <!--Sign Up Nav Section-->
-
     <section class="nav" style="margin-top: 24px;">
         <div class="company">
             <div class="logo">
-               <a href="/pages/index.html">
+               <a href="/index.html">
                 <img src="/assets/Icons/Logo.svg" alt="CampusConnect Logo">
                </a>
             </div>
             <div class="title">
-                <p class="company-name">Campus<b>Connect</b></h3>
+                <p class="company-name">Campus<b>Connect</b></p>
             </div>
         </div>
     </section>
@@ -26,9 +114,9 @@
     <!--Sign Up Body-->
     <main>
         <div class="sign-up-container">
-            <div class=" sign-up-content">
+            <div class="sign-up-content">
                 <div class="text">
-                    <h2 class="message" >Get Started</h2>
+                    <h2 class="message">Get Started</h2>
                     <p class="login-message">Already have an account? <a href="/pages/login.html" class="login-link-btn">Login</a></p>
                 </div>
             </div>
@@ -36,10 +124,62 @@
             <!--Sign Up Form-->
             <div class="sign-up-form">
                 <form class="register-form" id="register-form">
+                    
+                    <!-- Role Selection -->
+                    <div class="role-selection">
+                        <h3>I am a:</h3>
+                        <div class="role-options">
+                            <label class="role-option">
+                                <input type="radio" name="role" value="student" checked>
+                                <div class="role-card">
+                                    <span class="role-icon">🎓</span>
+                                    <span class="role-label">Student</span>
+                                    <span class="role-desc">Attend and register for events</span>
+                                </div>
+                            </label>
+                            
+                            <label class="role-option">
+                                <input type="radio" name="role" value="admin">
+                                <div class="role-card">
+                                    <span class="role-icon">👨‍💼</span>
+                                    <span class="role-label">Admin</span>
+                                    <span class="role-desc">Manage events and users</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Common Fields -->
                     <div class="form-group">
                         <input type="text" name="name" id="name" placeholder="Full Name" required style="color: var(--black);"/>
                         <input type="email" name="email-address" id="email" placeholder="Email Address" required style="color: var(--black);"/>
-                        <input type="password" name="password" id="password" placeholder="Password" required maxlength="8" style="color: var(--black);"/>
+                        <input type="password" name="password" id="password" placeholder="Password (min 6 characters)" required minlength="6" style="color: var(--black);"/>
+                    </div>
+
+                    <!-- Student-Only Fields -->
+                    <div id="studentFields">
+                        <div class="form-group">
+                            <input type="text" id="student_id" name="student_id" placeholder="Student ID" required style="color: var(--black);"/>
+                            <input type="text" id="major" name="major" placeholder="Major (e.g., Computer Science)" required style="color: var(--black);"/>
+                            <select id="year_of_study" name="year_of_study" required style="color: var(--black); padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                                <option value="">Select Year of Study</option>
+                                <option value="1">Year 1</option>
+                                <option value="2">Year 2</option>
+                                <option value="3">Year 3</option>
+                                <option value="4">Year 4</option>
+                                <option value="5">Year 5+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Admin-Only Fields -->
+                    <div id="adminFields" style="display: none;">
+                        <div class="form-group">
+                            <input type="text" id="department" name="department" placeholder="Department/Organization" style="color: var(--black);"/>
+                        </div>
+                        <div class="info-message">
+                            ⚠️ Admin accounts require approval before full access is granted.
+                        </div>
                     </div>
 
                     <div class="s-submit-btn">
@@ -49,12 +189,12 @@
             </div>
         </div>
 
-    <!--Sign Up Image-->
-    <div class="signup-img">
-        <img src="/assets/Images/website graphics.png" alt="Sign Up Image">
-    </div>
+        <!--Sign Up Image-->
+        <div class="signup-img">
+            <img src="/assets/Images/website graphics.png" alt="Sign Up Image">
+        </div>
     </main>
-    
-    <script type="module" src="/scripts/pages/signup.js"></script>
+
+    <script type="module" src="../scripts/pages/signup.js"></script>
 </body>
 </html>
