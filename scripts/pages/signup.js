@@ -40,150 +40,174 @@ form?.addEventListener('submit', (e) => {
 */
 
 // scripts/pages/signup.js
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+// scripts/pages/signup.js
+import { supabase } from '../config/supabase.js'
 
-const SUPABASE_URL = 'https://mvhfqxhgxarfnzbjntef.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12aGZxeGhneGFyZm56YmpudGVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NDkyNjIsImV4cCI6MjA4NTUyNTI2Mn0._cYsS4bWBTymDWlmxbecu-Xrh7D7bRknCzIU86rGK3M';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-let selectedRole = 'student';
+let selectedRole = 'student'
 
 document.addEventListener('DOMContentLoaded', () => {
-    setupRoleToggle();
-    setupForm();
-});
+    setupRoleToggle()
+    setupForm()
+})
 
 function setupRoleToggle() {
-    const roleRadios = document.querySelectorAll('input[name="role"]');
-    const studentFields = document.getElementById('studentFields');
-    const adminFields = document.getElementById('adminFields');
+    const roleRadios = document.querySelectorAll('input[name="role"]')
+    const studentFields = document.getElementById('studentFields')
+    const adminFields = document.getElementById('adminFields')
 
     roleRadios.forEach(radio => {
         radio.addEventListener('change', (e) => {
-            selectedRole = e.target.value;
-            const isStudent = selectedRole === 'student';
-
-            studentFields.style.display = isStudent ? 'block' : 'none';
-            adminFields.style.display = isStudent ? 'none' : 'block';
-
-            toggleFieldRequirements(isStudent);
-        });
-    });
-}
-
-function toggleFieldRequirements(isStudent) {
-    document.getElementById('student_id').required = isStudent;
-    document.getElementById('major').required = isStudent;
-    document.getElementById('year_of_study').required = isStudent;
-    document.getElementById('department').required = !isStudent;
+            selectedRole = e.target.value
+            
+            if (selectedRole === 'student') {
+                studentFields.style.display = 'block'
+                adminFields.style.display = 'none'
+                
+                document.getElementById('student_id').required = true
+                document.getElementById('major').required = true
+                document.getElementById('year_of_study').required = true
+                document.getElementById('department').required = false
+            } else {
+                studentFields.style.display = 'none'
+                adminFields.style.display = 'block'
+                
+                document.getElementById('student_id').required = false
+                document.getElementById('major').required = false
+                document.getElementById('year_of_study').required = false
+                document.getElementById('department').required = true
+            }
+        })
+    })
 }
 
 function setupForm() {
-    const form = document.getElementById('register-form');
-
+    const form = document.getElementById('register-form')
+    
     form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const submitBtn = form.querySelector('.sign-up-btn');
-        submitBtn.disabled = true;
-        submitBtn.value = 'Creating Account...';
-
+        e.preventDefault()
+        
+        // Get form values
+        const name = document.getElementById('name').value.trim()
+        const email = document.getElementById('email').value.trim()
+        const password = document.getElementById('password').value
+        
+        // Validate
+        if (!name || !email || !password) {
+            alert('Please fill in all required fields')
+            return
+        }
+        
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters')
+            return
+        }
+        
+        // Prepare user data based on role
+        let userData = {
+            full_name: name,
+            role: selectedRole,
+            is_admin: selectedRole === 'admin',
+            admin_approved: false
+        }
+        
+        if (selectedRole === 'student') {
+            const studentId = document.getElementById('student_id').value.trim()
+            const major = document.getElementById('major').value.trim()
+            const yearOfStudy = document.getElementById('year_of_study').value
+            
+            if (!studentId || !major || !yearOfStudy) {
+                alert('Please fill in all student fields')
+                return
+            }
+            
+            userData.student_id = studentId
+            userData.major = major
+            userData.year_of_study = parseInt(yearOfStudy)
+            userData.university = 'Qatar University'
+        } else {
+            const department = document.getElementById('department').value.trim()
+            
+            if (!department) {
+                alert('Please enter your department/organization')
+                return
+            }
+            
+            userData.department = department
+        }
+        
+        // Disable submit button
+        const submitBtn = form.querySelector('.sign-up-btn')
+        submitBtn.disabled = true
+        submitBtn.value = 'Creating Account...'
+        
         try {
-            const userData = getUserData();
+            console.log('Starting signup...', userData)
+            
+            // Step 1: Create auth user
             const { data: authData, error: authError } = await supabase.auth.signUp({
-                email: userData.email,
-                password: userData.password,
-                options: { data: userData }
-            });
-
-            if (authError) throw authError;
-
-            await insertProfile(authData.user.id, userData);
-
-            alert(selectedRole === 'admin'
-                ? 'Admin account created! Please wait for approval.'
-                : 'Account created successfully! Welcome to Campus Connect!');
-            window.location.href = '/pages/login.html';
+                email: email,
+                password: password
+            })
+            
+            console.log('Auth response:', authData, authError)
+            
+            if (authError) throw authError
+            
+            if (!authData.user) {
+                throw new Error('No user returned from signup')
+            }
+            
+            console.log('User created:', authData.user.id)
+            
+            // Step 2: Create profile
+            const { data: profileData, error: profileError } = await supabase
+                .from('profiles')
+                .insert([{
+                    id: authData.user.id,
+                    email: email,
+                    ...userData
+                }])
+                .select()
+            
+            console.log('Profile response:', profileData, profileError)
+            
+            if (profileError) throw profileError
+            
+            // Success!
+            if (selectedRole === 'admin') {
+                alert('✅ Admin account created! Please wait for approval before you can access all features.')
+            } else {
+                alert('✅ Account created successfully! Welcome to Campus Connect!')
+            }
+            
+            // Redirect to login
+            window.location.href = '/pages/login.html'
+            
         } catch (error) {
-            handleSignupError(error);
-            submitBtn.disabled = false;
-            submitBtn.value = 'Sign Up';
+            console.error('Signup error:', error)
+            
+            // Show user-friendly error messages
+            let errorMessage = 'Failed to create account. '
+            
+            if (error.message.includes('already registered') || error.message.includes('already been registered')) {
+                errorMessage = 'This email is already registered. Please login instead.'
+            } else if (error.message.includes('duplicate key')) {
+                if (error.message.includes('student_id')) {
+                    errorMessage = 'This Student ID is already registered.'
+                } else {
+                    errorMessage = 'This email is already registered.'
+                }
+            } else if (error.message.includes('invalid email')) {
+                errorMessage = 'Please enter a valid email address.'
+            } else {
+                errorMessage += error.message
+            }
+            
+            alert(errorMessage)
+            
+            // Re-enable submit button
+            submitBtn.disabled = false
+            submitBtn.value = 'Sign Up'
         }
-    });
-}
-
-function getUserData() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-
-    if (!name || !email || !password) {
-        throw new Error('Please fill in all required fields.');
-    }
-
-    if (password.length < 6) {
-        throw new Error('Password must be at least 6 characters.');
-    }
-
-    const userData = {
-        full_name: name,
-        email,
-        password,
-        role: selectedRole,
-        is_admin: selectedRole === 'admin',
-        admin_approved: false
-    };
-
-    if (selectedRole === 'student') {
-        const studentId = document.getElementById('student_id').value.trim();
-        const major = document.getElementById('major').value.trim();
-        const yearOfStudy = document.getElementById('year_of_study').value;
-
-        if (!studentId || !major || !yearOfStudy) {
-            throw new Error('Please fill in all student fields.');
-        }
-
-        userData.student_id = studentId;
-        userData.major = major;
-        userData.year_of_study = parseInt(yearOfStudy);
-        userData.university = 'Qatar University';
-    } else {
-        const department = document.getElementById('department').value.trim();
-        if (!department) {
-            throw new Error('Please enter your department/organization.');
-        }
-        userData.department = department;
-    }
-
-    return userData;
-}
-
-async function insertProfile(userId, userData) {
-    const { error: profileError } = await supabase
-        .from('profiles')
-        .insert([{ id: userId, ...userData }]);
-
-    if (profileError) throw profileError;
-}
-
-function handleSignupError(error) {
-    console.error('Signup error:', error);
-
-    let errorMessage = 'Failed to create account. ';
-    if (error.message.includes('already registered')) {
-        errorMessage = 'This email is already registered. Please login instead.';
-    } else if (error.message.includes('duplicate key value')) {
-        errorMessage = error.message.includes('student_id')
-            ? 'This Student ID is already registered.'
-            : 'This email is already registered.';
-    } else if (error.message.includes('invalid email')) {
-        errorMessage = 'Please enter a valid email address.';
-    } else if (error.message.includes('Password should be')) {
-        errorMessage = error.message;
-    } else {
-        errorMessage += error.message;
-    }
-
-    alert(errorMessage);
+    })
 }
