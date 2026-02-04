@@ -1,4 +1,5 @@
 import { supabase } from '../config/supabase.js'
+import { showModal } from '../utils/modal.js'
 
 let selectedRole = 'student'
 

@@ -8,8 +8,10 @@
 :root{
     --white: #ffffff;
     --black: #000000;
-    --primary-grey: #F2F2F2;
+    --primary-grey: #f0f0f0;
     --seconday-grey: #E9E9E9;
+    --primary-accent: #FF8A80;
+    --secondary-accent: #2EC4B6; 
     --header-font: 'Fraunces', serif;
     --subheader-font: 'Inter', sans-serif;
     --text-font: 'Manrope', sans-serif;
@@ -71,6 +73,16 @@ body{
 
 .navbar-nav .nav-link, a{
     text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover{
+    border: 1px solid var(--primary-accent);
+    background-color: #ff8b803e;
+}
+
+.navbar-nav .nav-link:active{
+    border: 1px solid var(--primary-accent);
+    background-color: #ff8b803e;
 }
 
 .navbar .btn-primary {
@@ -181,4 +193,8 @@ footer .brand .logo {
         transform: translateY(-5px);
         transition: all 0.5s ease-in-out;
     }
+}
+
+.accent-text{
+    color: var(--primary-accent);
 }

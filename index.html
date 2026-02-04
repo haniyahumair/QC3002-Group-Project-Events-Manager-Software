@@ -35,11 +35,11 @@
 
             <!--Icons shown when user is logged in-->
             <div class="icons">
-                <a href="cart.html" class="cart-icon" id="cartIcon">
+                <a href="/pages/cart.html" class="cart-icon" id="cartIcon">
                     <img src="/assets/Icons/cart-Icon.svg" alt="Cart-Icon">
                 </a>
 
-                <a href="profile.html" class="profile-icon" id="profileIcon">
+                <a href="/pages/profile.html" class="profile-icon" id="profileIcon">
                     <img src="/assets/Icons/user-Icon.svg" alt="User-Icon">
                 </a>
             </div>
@@ -49,10 +49,26 @@
 
         </nav>
     </header>
-
+    <!-- Floating Ambient Background -->
+    <div class="hero-background">
+        <div class="ambient-words">
+          <span class="word">#workshop</span>
+          <span class="word emoji">🎓</span>
+          <span class="word">Discover</span>
+          <span class="word">#sports</span>
+          <span class="word emoji">👥</span>
+          <span class="word">Connect</span>
+          <span class="word">#tech</span>
+          <span class="word emoji">🏛️</span>
+          <span class="word">Create</span>
+          <span class="word">#campus</span>
+          <span class="word emoji">🎟️</span>
+          <span class="word">Attend</span>
+        </div>
+      
     <section class="hero container">
         <p class="text-muted">Qatar’s #1 Student Event Platform</p>
-        <h1 class="fw-bold display-4">Discover. Attend.<br/>Create.</h1>
+        <h1 class="fw-bold display-4">Discover. Attend.<br/><i>Create</i>.</h1>
         <p class="mt-3">Bring your campus to life! Explore events, meet new people, and make every day at uni unforgettable.</p>
         <div class="mt-4">
             <a class="btn browse-events" href="/pages/events.html">Browse Events</a>
@@ -65,9 +81,10 @@
             <div id="text-center" class="partner-uni"> <span class="numbers"><strong>7+</strong></span><br/>Partner Universities</div>
         </div>
     </section>
+    </div>
 
     <section class="info-container">
-        <h2 class="fw-bold">Everything you need, all in one place</h2>
+        <h2 class="fw-bold">Everything you need, all in <span class="accent-text">one</span> place</h2>
         <p class="text-muted">Built by students, for students. Simple to use.</p>
 
         <div class="cards-container">
@@ -187,6 +204,112 @@
                         <a class="btn btn-dark w-100 viewDetailBtn" data-id="3">View Details</a>
                     </div>
                 </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">What Students Say</h2>
+            </div>
+        </div>
+        <div class="testimonials-content">
+            <div class="testimonials-slider js-testmonials-slider">
+                <!-- Student 1 -->
+                <div class="testimonials-item">
+                    <div class="info">
+                        <div class="student-avatar">FA</div>
+                        <div class="text-box">
+                            <h3 class="name">Fatima Qureshi</h3>
+                            <span class="job">Computer Science, QU</span>
+                        </div>
+                    </div>
+                    <p>"Found my study group through a workshop here. Made friends from different majors I'd never have met otherwise!"</p>
+                    <div class="rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+                
+                <!-- Student 2 -->
+                <div class="testimonials-item">
+                    <div class="info">
+                        <div class="student-avatar">AA</div>
+                        <div class="text-box">
+                            <h3 class="name">Ahmed Al-Sulaiti</h3>
+                            <span class="job">Engineering, UDST</span>
+                        </div>
+                    </div>
+                    <p>"The football tournament organization was seamless. Registered my team in 2 minutes instead of filling paper forms for hours!"</p>
+                    <div class="rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+                
+                <!-- Student 3 -->
+                <div class="testimonials-item">
+                    <div class="info">
+                        <div class="student-avatar">SA</div>
+                        <div class="text-box">
+                            <h3 class="name">Sara Ahmed</h3>
+                            <span class="job">Business, HBKU</span>
+                        </div>
+                    </div>
+                    <p>"Hosted my first entrepreneurship workshop with zero hassle. The platform handled registrations, reminders, everything!"</p>
+                    <div class="rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+                
+                <!-- Student 4 -->
+                <div class="testimonials-item">
+                    <div class="info">
+                        <div class="student-avatar">MA</div>
+                        <div class="text-box">
+                            <h3 class="name">Mohammed Al-Ansari</h3>
+                            <span class="job">Medicine, WCM-Q</span>
+                        </div>
+                    </div>
+                    <p>"As a med student with limited time, this app helps me find relevant events quickly. The filtering system is genius."</p>
+                    <div class="rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+                
+                <!-- Student 5 -->
+                <div class="testimonials-item">
+                    <div class="info">
+                        <div class="student-avatar">NA</div>
+                        <div class="text-box">
+                            <h3 class="name">Noor Fatima</h3>
+                            <span class="job">Architecture, VCUarts Qatar</span>
+                        </div>
+                    </div>
+                    <p>"The cultural festival we organized reached 3x more students than last year. The promotion tools actually work!"</p>
+                    <div class="rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
