@@ -180,3 +180,94 @@ main{
         margin-left: 20px;
     }
 }
+
+/*role selection */
+.role-selection {
+    margin-bottom: 25px;
+    font-family: var(--text-font);
+}
+
+.role-selection h3 {
+    margin-bottom: 15px;
+    color: var(--black);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--subheader-font);
+}
+
+.role-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.role-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.role-option input[type="radio"] {
+    display: none;
+}
+
+.role-card {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+.role-option input[type="radio"]:checked + .role-card {
+    border-color: grey;
+    background: var(--seconday-grey);
+}
+
+.role-card:hover {
+    border-color: grey;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.role-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.role-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--black);
+}
+
+.role-desc {
+    display: block;
+    font-size: 13px;
+    color: grey;
+}
+
+/* Student/Admin specific fields */
+#studentFields,
+#adminFields {
+    margin-top: 15px;
+}
+
+.info-message {
+    background: #E9E9E9;
+    border: 1px solid rgb(99, 98, 98);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    margin-bottom: 15px;
+}

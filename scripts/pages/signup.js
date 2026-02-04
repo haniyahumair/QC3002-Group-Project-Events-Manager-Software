@@ -1,46 +1,3 @@
-//import { setAuth } from './auth.js';
-
-/*// basic form and inputs (name, email, and password)
-const form = document.querySelector('#register-form');
-const nameInput = document.querySelector('#name');
-const emailInput = document.querySelector('#email');
-const passwordInput = document.querySelector('#password');
-
-form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-  const name = (nameInput.value || '').trim();
-  const email = (emailInput.value || '').trim();
-  const password = (passwordInput.value || '').trim();
-
-  // name, email, and password validation
-  if (!name) { alert('Please enter your full name.'); return; }
-  if (!email || !/\S+@\S+\.\S+/.test(email)) { alert('Please enter a valid email address.'); return; } 
-  if (!password || password.length < 6) { alert('Please enter a password of at least 6 characters.');
-    return;
-  }
-
-  // mock user
-   const user = {
-    id: Date.now().toString(),
-    name: name,
-    email: email,
-    role: 'USER'
-  };
-  
-  setAuth(user);
-
-  // redirect to home page
-  const params = new URLSearchParams(location.search);
-  const returnTo = params.get('returnTo') || '/home.html';
-
-  //redirect
-  location.href = returnTo;
-});
-*/
-
-// scripts/pages/signup.js
-// scripts/pages/signup.js
 import { supabase } from '../config/supabase.js'
 
 let selectedRole = 'student'
@@ -114,8 +71,9 @@ function setupForm() {
             const studentId = document.getElementById('student_id').value.trim()
             const major = document.getElementById('major').value.trim()
             const yearOfStudy = document.getElementById('year_of_study').value
+            const university = document.getElementById('university').value.trim()
             
-            if (!studentId || !major || !yearOfStudy) {
+            if (!studentId || !major || !yearOfStudy || !university) {
                 alert('Please fill in all student fields')
                 return
             }
@@ -123,8 +81,10 @@ function setupForm() {
             userData.student_id = studentId
             userData.major = major
             userData.year_of_study = parseInt(yearOfStudy)
-            userData.university = 'Qatar University'
-        } else {
+            userData.university = university
+        } 
+        
+        else {
             const department = document.getElementById('department').value.trim()
             
             if (!department) {
@@ -142,8 +102,7 @@ function setupForm() {
         
         try {
             console.log('Starting signup...', userData)
-            
-            // Step 1: Create auth user
+            //auth user
             const { data: authData, error: authError } = await supabase.auth.signUp({
                 email: email,
                 password: password
@@ -158,8 +117,7 @@ function setupForm() {
             }
             
             console.log('User created:', authData.user.id)
-            
-            // Step 2: Create profile
+            //profile data append
             const { data: profileData, error: profileError } = await supabase
                 .from('profiles')
                 .insert([{
@@ -173,15 +131,12 @@ function setupForm() {
             
             if (profileError) throw profileError
             
-            // Success!
             if (selectedRole === 'admin') {
                 alert('✅ Admin account created! Please wait for approval before you can access all features.')
-            } else {
-                alert('✅ Account created successfully! Welcome to Campus Connect!')
-            }
-            
-            // Redirect to login
-            window.location.href = '/pages/login.html'
+            } 
+            setTimeout(() => { 
+                window.location.href = '/pages/login.html'
+            }, 5000);
             
         } catch (error) {
             console.error('Signup error:', error)
@@ -210,4 +165,15 @@ function setupForm() {
             submitBtn.value = 'Sign Up'
         }
     })
+    showModal(
+        'Welcome to Campus Connect!',
+        'Your account has been created successfully. You can now explore events and connect with your campus community!',
+        'success',
+        {
+            autoClose: 3000,  // Auto-close after 3 seconds
+            onClose: () => {
+                window.location.href = '/pages/login.html'
+            }
+        }
+    )    
 }
