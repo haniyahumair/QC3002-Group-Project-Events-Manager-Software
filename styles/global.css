@@ -147,6 +147,11 @@ footer .brand .logo {
     font-size: 0.9rem;
 }
 
+.footer-links a:hover{
+    border: 1px solid var(--primary-accent);
+    background-color: #ff8b803e;
+}
+
 .footer-links a{
     color: var(--black);
     text-decoration: none;
@@ -161,6 +166,118 @@ footer .brand .logo {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
     transition: all 0.5s ease-in-out;
+}
+
+.event-type {
+    background-color: transparent;
+    align-items: flex-end;
+    border: 1px solid var(--black);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+.date-container .date-emoji {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.date-container .date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.date-container .month,
+.date-container .day,
+.date-container .year {
+    margin: 0;
+}
+
+.time-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+.time-container .time-emoji {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.time-container .time-details {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.time-container .start-time,
+.time-container .end-time {
+    margin: 0;
+}
+
+.time-container .time-separator {
+    color: var(--black);
+    margin: 0 2px;
+}
+
+.location-of-event {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.location-of-event .location-emoji {
+    font-size: 1rem;
+    margin-top: 1px;
+    opacity: 0.9;
+}
+
+.location-of-event .location {
+    margin: 0;
+    flex: 1;
+}
+
+.type-of-event {
+    margin-bottom: 10px;
+    margin-top: auto;
+}
+
+.event-type img {
+    width: 14px;
+    height: 14px;
+}
+
+.event-card a {
+    background-color: var(--black);
+    text-align: center;
+    border: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 9px 12px ;
+    border-radius: 10px;
+    margin-top: auto;
 }
 
 /*Mobile layout*/

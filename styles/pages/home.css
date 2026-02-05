@@ -300,12 +300,14 @@ background-color: var(--black);
 
 .upcoming-events-container .event-cards-container{
     background-color: var(--white);
+    height: auto;
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-direction: row;
-    overflow: hidden;
-    padding: 24px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: center;
 }
 
 .event-cards-container .event-card {
@@ -313,6 +315,7 @@ background-color: var(--black);
     width: 370px;
     border-radius: 25px;
     background-color: var(--primary-grey);
+    border-top: 3px solid #FF8A80;
 }
 
 .event-card {
@@ -436,21 +439,6 @@ background-color: var(--black);
 .type-of-event {
     margin-bottom: 10px;
     margin-top: auto;
-}
-
-.event-type {
-    background-color: transparent;
-    align-items: flex-end;
-    border: 1px solid var(--black);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--black);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
 }
 
 .event-type img {

@@ -228,7 +228,7 @@
     text-decoration: none;
 }
 /* Event Cards Styling */
-.event-cards-container{
+.event-cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding-left: 24px;
@@ -244,6 +244,7 @@
     width: 370px;
     border-radius: 25px;
     background-color: var(--primary-grey);
+    border-top: 3px solid #FF8A80;
 }
 
 .event-card {
@@ -323,83 +324,35 @@
     line-height: 1.4;
 }
 
-.date-time {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.8rem;
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .event-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.date-time img {
-    width: 16px;
-    height: 16px;
-    margin-bottom: 10px;
+@media (max-width: 768px) {
+    .event-cards-container {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+    
+    .event-cards-container .event-card {
+        width: 100%;
+        max-width: 370px;
+        margin: 0 auto;
+    }
+    
+    .date-time {
+        flex-wrap: wrap;
+    }
+    
+    .date-time .time-container {
+        margin-left: 0;
+        margin-top: 4px;
+        width: 100%;
+    }
 }
-
-.date-time .date,
-.date-time .time {
-    margin: 0;
-}
-
-.date-time .time {
-    margin-left: 3px;
-}
-
-.location-of-event {
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
-    margin-bottom: 5px;
-    font-size: 0.8rem;
-}
-
-.location-of-event img {
-    width: 16px;
-    height: 16px;
-    margin-top: 2px;
-}
-
-.location-of-event .location {
-    margin: 0;
-}
-
-.type-of-event {
-    margin-bottom: 10px;
-    margin-top: auto;
-}
-
-.event-type {
-    background-color: transparent;
-    align-items: flex-end;
-    border: 1px solid var(--black);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--black);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.event-type img {
-    width: 14px;
-    height: 14px;
-}
-
-.event-card a {
-    background-color: var(--black);
-    text-align: center;
-    border: none;
-    color: var(--white);
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 9px 12px ;
-    border-radius: 10px;
-    margin-top: auto;
-}
-
 /*Footer Styling*/
 footer {
     display: flex;

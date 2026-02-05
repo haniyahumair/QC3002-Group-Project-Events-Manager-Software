@@ -36,11 +36,11 @@
 
             <!--Icons shown when user is logged in-->
             <div class="icons">
-                <a href="cart.html" class="cart-icon" id="cartIcon">
+                <a href="/pages/cart.html" class="cart-icon" id="cartIcon">
                     <img src="/assets/Icons/cart-Icon.svg" alt="Cart-Icon">
                 </a>
 
-                <a href="profile.html" class="profile-icon" id="profileIcon">
+                <a href="/pages/profile.html" class="profile-icon" id="profileIcon">
                     <img src="/assets/Icons/user-Icon.svg" alt="User-Icon">
                 </a>
             </div>
@@ -52,7 +52,7 @@
     </header>
 
     <section class="events-header">
-        <h1 class="fw-bold">Discover Event’s</h1>
+        <h1 class="fw-bold">Discover <i><span class="accent-text">Event’s</span></i></h1>
         <p>Your next great experience starts here</p>
 
 
@@ -63,7 +63,7 @@
                 </div>
                 <div class="filter-buttons">
                     <button class="filter-btn" id="categoriesBtn">
-                        <img src="/assets/Icons/Funnel Icon.svg" alt="Funnel Icon" class="me-2" width="12" height="12"> All Categories
+                        <!--<img src="/assets/Icons/Funnel Icon.svg" alt="Funnel Icon" class="me-2" width="12" height="12">-->⬇️ All Categories
                     </button>
                     <div class="dropdown-menu-custom" id="categoriesDropdown">
                         <div><b>All Events</b></div>
@@ -82,8 +82,7 @@
 
                 <div class="filter-buttons">
                     <button class="filter-btn" id="priceBtn">
-                        <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin Stacked Icon" class="me-2" width="20"
-                            height="20">Filter By Price
+                        <!--<img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin Stacked Icon" class="me-2" width="20" height="20">-->💲 Filter By Price
                     </button>
                     <div class="dropdown-menu-custom price-btn" id="priceDropdown">
                         <div data-filter="all"><b>All Events</b></div>
@@ -95,8 +94,8 @@
 
                 <div class="filter-buttons">
                     <button class="filter-btn" id="dateBtn">
-                        <img src="/assets/Icons/Calendar.svg" alt="Calendar-Icon" class="me-2" width="20"
-                            height="20">Filter By Date
+                        <!--<img src="/assets/Icons/Calendar.svg" alt="Calendar-Icon" class="me-2" width="20"
+                            height="20">-->📆 Filter By Date
                     </button>
                     <div class="dropdown-menu-custom date-filter-btn" id="dateDropdown">
                         <div class="date-filter-form">
@@ -119,71 +118,98 @@
 
     <!-- Event Cards -->
     <section class="event-cards-container">
-
         <!-- Event 1 -->
         <div class="event-card shadow">
             <div class="event-price">
-                <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
-                <p class="price">Free</p>
+                <!-- <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon"> -->
+                <p class="price">💵 Free</p>
             </div>
             <img src="/assets/Images/IMG_6404.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">AI in Action: Transforming Theory into Practice</h5>
                 <p class="event-description">This session, delivered by Abdulrahman Hassan, is designed for those keen to explore practical applications of AI and bridge the gap between theory and real world impact.</p>
-                <div class="date-time">
-                    <img src="/assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">
+                
+                <!-- Date Container -->
+                <div class="date-container">
+                    <span class="date-emoji">📅</span>
+                    <div class="date">
                         <span class="month">November</span>
                         <span class="day">14</span>
                         <span class="year">2025</span>
-                    </p>
-                    <p class="time">04:00 - 06:00 PM</p>
+                    </div>
                 </div>
+
+                <!-- Time Container -->
+                <div class="time-container">
+                    <span class="time-emoji">🕕</span>
+                    <div class="time-details">
+                        <span class="start-time">04:00 PM</span>
+                        <span class="time-separator"> - </span>
+                        <span class="end-time">06:00 PM</span>
+                    </div>
+                </div>
+
                 <div class="location-of-event">
-                    <img src="/assets/Icons/Pin.svg" alt="Location-Icon">
-                    <p class="location"> BLDG 2, AFG College with the University of Aberdeen</p>
+                    <!-- <img src="/assets/Icons/Pin.svg" alt="Location-Icon"> -->
+                    <span class="location-emoji">📍</span>
+                    <p class="location">BLDG 2, AFG College with the University of Aberdeen</p>
                 </div>
+                
                 <div class="type-of-event">
                     <button class="event-type">
+                        <!-- KEEPING THE STAR IMAGE as requested -->
                         <img src="/assets/Icons/Star 1.svg" alt="Star-Icon">
                         Workshop
                     </button>
                 </div>
+                
                 <a class="btn btn-dark w-100 viewDetailBtn" data-id="1">View Details</a>
-
-
             </div>
         </div>
     
         <!-- Event 2 -->
         <div class="event-card shadow">
             <div class="event-price">
-                <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
-                <p class="price">Free</p>
+                <!-- <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon"> -->
+                <p class="price">💵 Free</p>
             </div>
             <img src="/assets/Images/football.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">Football Championship Final</h5>
                 <p class="event-description">Inter-university football championship finals - the ultimate showdown!</p>
-                <div class="date-time">
-                    <img src="/assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">
+                
+                <div class="date-container">
+                    <span class="date-emoji">📅</span>
+                    <div class="date">
                         <span class="month">December</span>
                         <span class="day">12</span>
                         <span class="year">2025</span>
-                    </p>
-                    <p class="time">05:00 PM</p>
+                    </div>
                 </div>
+
+                <!-- Time Container -->
+                <div class="time-container">
+                    <span class="time-emoji">🕕</span>
+                    <div class="time-details">
+                        <span class="start-time">05:00 PM</span>
+                        <span class="time-separator"> - </span>
+                        <span class="end-time">08:00 PM</span>
+                    </div>
+                </div>
+
                 <div class="location-of-event">
-                    <img src="/assets/Icons/Pin.svg" alt="Location-Icon">
-                    <p class="location"> Qatar University Sports Complex</p>
+                    <!-- <img src="/assets/Icons/Pin.svg" alt="Location-Icon"> -->
+                    <span class="location-emoji">📍</span>
+                    <p class="location">Qatar University Sports Complex</p>
                 </div>
+                
                 <div class="type-of-event">
                     <button class="event-type">
                         <img src="/assets/Icons/Star 1.svg" alt="Star-Icon">
                         Sports
                     </button>
                 </div>
+                
                 <a class="btn btn-dark w-100 viewDetailBtn" data-id="2">View Details</a>
             </div>
         </div>
@@ -191,32 +217,46 @@
         <!-- Event 3 -->
         <div class="event-card shadow">
             <div class="event-price">
-                <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
-                <p class="price">50 QAR</p>
+                <!-- <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon"> -->
+                <p class="price">💵 50 QAR</p>
             </div>
             <img src="/assets/Images/foc.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">Festival Of Cultures</h5>
                 <p class="event-description">Experience the world at our Festival of Cultures, celebrating the diverse traditions of our student community.</p>
-                <div class="date-time">
-                    <img src="/assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">
+                
+                <div class="date-container">
+                    <span class="date-emoji">📅</span>
+                    <div class="date">
                         <span class="month">February</span>
                         <span class="day">6</span>
                         <span class="year">2026</span>
-                    </p>
-                    <p class="time">07:00 PM</p>
+                    </div>
                 </div>
+
+                <!-- Time Container -->
+                <div class="time-container">
+                    <span class="time-emoji">🕕</span>
+                    <div class="time-details">
+                        <span class="start-time">06:00 PM</span>
+                        <span class="time-separator"> - </span>
+                        <span class="end-time">11:00 PM</span>
+                    </div>
+                </div>
+                
                 <div class="location-of-event">
-                    <img src="/assets/Icons/Pin.svg" alt="Location-Icon">
+                    <!-- <img src="/assets/Icons/Pin.svg" alt="Location-Icon"> -->
+                    <span class="location-emoji">📍</span>
                     <p class="location">University of Doha Science and Technology (UDST)</p>
                 </div>
+                
                 <div class="type-of-event">
                     <button class="event-type">
                         <img src="/assets/Icons/Star 1.svg" alt="Star-Icon">
                         Festival
                     </button>
                 </div>
+                
                 <a class="btn btn-dark w-100 viewDetailBtn" data-id="3">View Details</a>
             </div>
         </div>
@@ -224,32 +264,45 @@
         <!-- Event 4 -->
         <div class="event-card shadow">
             <div class="event-price">
-                <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
-                <p class="price">Free</p>
+                <!-- <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon"> -->
+                <p class="price">💵 Free</p>
             </div>
             <img src="/assets/Images/slide4-5.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">CMU-Q Statistical Consulting Center Workshop Series</h5>
                 <p class="event-description">The workshops will introduce statistical methods for biological scientists, focusing on how to choose appropriate methods for different research scenarios.</p>
-                <div class="date-time">
-                    <img src="/assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">
+
+                <div class="date-container">
+                    <span class="date-emoji">📅</span>
+                    <div class="date">
                         <span class="month">November</span>
                         <span class="day">27</span>
                         <span class="year">2025</span>
-                    </p>
-                    <p class="time">03:00 PM - 05:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Time Container -->
+                <div class="time-container">
+                    <span class="time-emoji">🕕</span>
+                    <div class="time-details">
+                        <span class="start-time">04:00 PM</span>
+                        <span class="time-separator"> - </span>
+                        <span class="end-time">06:00 PM</span>
+                    </div>
                 </div>
                 <div class="location-of-event">
-                    <img src="/assets/Icons/Pin.svg" alt="Location-Icon">
+                    <!-- <img src="/assets/Icons/Pin.svg" alt="Location-Icon"> -->
+                    <span class="location-emoji">📍</span>
                     <p class="location">3178 CMU-Q Building</p>
                 </div>
+                
                 <div class="type-of-event">
                     <button class="event-type">
                         <img src="/assets/Icons/Star 1.svg" alt="Star-Icon">
                         Workshop
                     </button>
                 </div>
+                
                 <a class="btn btn-dark w-100 viewDetailBtn" data-id="4">View Details</a>
             </div>
         </div>
@@ -257,32 +310,46 @@
         <!-- Event 5 -->
         <div class="event-card shadow">
             <div class="event-price">
-                <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
-                <p class="price">50 QAR</p>
+                <!-- <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon"> -->
+                <p class="price">💵 50 QAR</p>
             </div>
             <img src="/assets/Images/foc.jpg" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">Festival Of Cultures</h5>
                 <p class="event-description">Experience the world at our Festival of Cultures, celebrating the diverse traditions of our student community.</p>
-                <div class="date-time">
-                    <img src="/assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">
+                
+                <div class="date-container">
+                    <span class="date-emoji">📅</span>
+                    <div class="date">
                         <span class="month">February</span>
-                        <span class="day">7</span>
+                        <span class="day">6</span>
                         <span class="year">2026</span>
-                    </p>
-                    <p class="time">07:00 PM</p>
+                    </div>
                 </div>
+
+                <!-- Time Container -->
+                <div class="time-container">
+                    <span class="time-emoji">🕕</span>
+                    <div class="time-details">
+                        <span class="start-time">06:00 PM</span>
+                        <span class="time-separator"> - </span>
+                        <span class="end-time">11:00 PM</span>
+                    </div>
+                </div>
+                
                 <div class="location-of-event">
-                    <img src="/assets/Icons/Pin.svg" alt="Location-Icon">
+                    <!-- <img src="/assets/Icons/Pin.svg" alt="Location-Icon"> -->
+                    <span class="location-emoji">📍</span>
                     <p class="location">University of Doha Science and Technology (UDST)</p>
                 </div>
+                
                 <div class="type-of-event">
                     <button class="event-type">
                         <img src="/assets/Icons/Star 1.svg" alt="Star-Icon">
                         Festival
                     </button>
                 </div>
+                
                 <a class="btn btn-dark w-100 viewDetailBtn" data-id="3">View Details</a>
             </div>
         </div>
@@ -290,37 +357,51 @@
         <!-- Event 6 -->
         <div class="event-card shadow">
             <div class="event-price">
-                <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon">
-                <p class="price">Free</p>
+                <!-- <img src="/assets/Icons/Coin Stacked Icon.svg" alt="Coin-Icon"> -->
+                <p class="price">💵 Free</p>
             </div>
             <img src="/assets/Images/Directors-Cut_Events-Homepage.jpg.avif" class="img-fluid" />
             <div class="p-3">
                 <h5 class="event-title">AI, Skills, and the Future of (No) work</h5>
                 <p class="event-description">
                     How is artificial intelligence reshaping labor markets? Drawing on his research analyzing 1.5 billion online job vacancies, as well as his close tracking of AI-related venture capital investments, Professor Antoniades explores these questions.</p>
-                <div class="date-time">
-                    <img src="/assets/Icons/Calendar.svg" alt="Calender-Icon">
-                    <p class="date">
-                        <span class="month">December</span>
-                        <span class="day">1</span>
-                        <span class="year">2025</span>
-                    </p>
-                    <p class="time">06:00 - 08:00PM</p>
-                </div>
+                
+                    <div class="date-container">
+                        <span class="date-emoji">📅</span>
+                        <div class="date">
+                            <span class="month">February</span>
+                            <span class="day">6</span>
+                            <span class="year">2026</span>
+                        </div>
+                    </div>
+    
+                    <!-- Time Container -->
+                    <div class="time-container">
+                        <span class="time-emoji">🕕</span>
+                        <div class="time-details">
+                            <span class="start-time">06:00 PM</span>
+                            <span class="time-separator"> - </span>
+                            <span class="end-time">11:00 PM</span>
+                        </div>
+                    </div>
+                    
+                
                 <div class="location-of-event">
-                    <img src="/assets/Icons/Pin.svg" alt="Location-Icon">
+                    <!-- <img src="/assets/Icons/Pin.svg" alt="Location-Icon"> -->
+                    <span class="location-emoji">📍</span>
                     <p class="location">Auditorium Georgetown University Qatar</p>
                 </div>
+                
                 <div class="type-of-event">
                     <button class="event-type">
                         <img src="/assets/Icons/Star 1.svg" alt="Star-Icon">
                         Workshop
                     </button>
                 </div>
+                
                 <a class="btn btn-dark w-100 viewDetailBtn" data-id="5">View Details</a>
             </div>
         </div>
-    
     </section>
 
     <footer class="bg-white py-4 text-center shadow-sm">
